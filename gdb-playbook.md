@@ -44,13 +44,13 @@
 -------------------------------------------------------------------------
 
 
-### PRINT STACK VALUES- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+### PRINT `STACK VALUES`
+```
+gef>    dereference <addressORregister>   ; GEF SPECFIFIC; get the stack dump from gdb summary     
+pwndbg> telescope   <addressORregister>   ; PWNDBG specific; get the stack dump from gdb summary     
+```
 
-**gef>    dereference <addressORregister>   ; GEF SPECFIFIC; get the stack dump from gdb summary !!!!!!!!!!!!!!!**    
-**pwndbg> telescope   <addressORregister>   ; PWNDBG specific; get the stack dump from gdb summary !!!!!!!!!!!!!**    
-
-
-**Dump Hex Values from STACK**
+**Dump `HEX VALUES` from `STACK`**
 ```
 [pwndbg]: hexdump
 [pwndbg]: hexdump <addressORregister>
@@ -59,7 +59,8 @@
 ```
 
 
-``` (gdb) =============================
+```
+  (gdb) =============================
 	(gdb) x/10x $sp             ; see first 10 HEX INTEGER from the STACK
 	(gdb) x/u   $esp+<offset>   ; see UNSIGNED INTEGERS from the STACK at an offset
 	(gdb) x/4b  $esp+<offset    ; see first 4 BYTES from the STACK at an offset
@@ -84,10 +85,10 @@
 
 
 ### DISASSEMBLY / INSTRUCTION VIEW - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-**gef>    cs <target>	 ; GEF & PWNDBG; includes rwx attributes**     
-**pwndbg> u <target> 	 ; GEF & PWNDBG; includes rwx attributes**    
-
+```
+gef>    cs <target>	 ; GEF & PWNDBG; includes rwx attributes
+pwndbg> u <target> 	 ; GEF & PWNDBG; includes rwx attributes
+```
 
 ``` (gdb)
     (gdb) disassemble <function>
@@ -106,9 +107,10 @@
 
 
 ### REGISTERS- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-**pwndbg> regs**   
-**gef> registers**   
+```
+pwndbg> regs
+gef> registers
+```
 
 ``` (gdb)
     (gdb) info registers
