@@ -1,0 +1,3 @@
+emacs -f multi-vterm
+emacs -f multi-term
+emacs -f eshell
