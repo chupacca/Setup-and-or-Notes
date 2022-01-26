@@ -116,6 +116,24 @@ gef> registers
     (gdb) info registers
 ```
 
+
+-------------------------------------------------------------------------
+
+### Register information
+```
+	(gdb) info registers		; see registers
+	(gdb) x/s $r3			; see string in R3 register [that's an ARM arch register]
+	
+	gef> registers			;GEF SPECIFIC (is similar to the summary at every step) 
+	
+	pwndbg> reg    			;PWNDBG SPECFIFIC                                       
+	pwndbg> xpsr			;pwndbg specific; see ARM/xPSR/CPSR register
+```
+	
+**See content of register**
+	
+
+
 ### VARIABLES- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 ```(gdb)
    (gdb) info args       ; arguments in current fucntion
@@ -295,12 +313,6 @@ set $pc = 0xffffff
 
 ### Function
 	
-**View (whole)**
-```
-	gdb> disassemble <function>
-	gef> cs <function>	; GEF SPECIFIC
-```
-	
 **List functions**
 ```
 	The functions command will list all of the convenience functions provided by GEF.
@@ -320,20 +332,6 @@ set $pc = 0xffffff
 
 **Chunk**
 	gef> heap chunks <location>
-
-
--------------------------------------------------------------------------
-
-### Register information
-```
-	gdb> info registers
-	gef> registers			;GEF SPECIFIC (is similar to the summary at every step) !!!!!!!!!!!!
-	pwndbg> reg    			;PWNDBG SPECFIFIC                                       !!!!!!!!!!!!
-	pwndbg> xpsr			;pwndbg specific; see ARM/xPSR/CPSR register
-```
-	
-**See content of register**
-	gdb> x/s $r3			; see string in r3 register
 
 -------------------------------------------------------------------------
 
