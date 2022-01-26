@@ -4,7 +4,7 @@
 [gef]:    context
 ```
 
-# Search `COMMANDS` and `CMD DESCRIPTIONS`
+**Search `COMMANDS` and `CMD DESCRIPTIONS`**
 ```
 (gdb) apropos <search_term>
 ```
