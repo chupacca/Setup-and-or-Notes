@@ -45,10 +45,10 @@
 
 
 ### PRINT STACK VALUES- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-```
+
 **gef>    dereference <addressORregister>   ; GEF SPECFIFIC; get the stack dump from gdb summary !!!!!!!!!!!!!!!**    
 **pwndbg> telescope   <addressORregister>   ; PWNDBG specific; get the stack dump from gdb summary !!!!!!!!!!!!!**    
-```
+
 
 **Dump Hex Values from STACK**
 ```
