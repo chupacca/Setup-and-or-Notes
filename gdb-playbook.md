@@ -44,19 +44,19 @@
 -------------------------------------------------------------------------
 
 
-# PRINT STACK VALUES- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-
-**gef>    dereference <addressORregister>   ; GEF SPECFIFIC; get the stack dump from gdb summary !!!!!!!!!!!!!!!**
-**pwndbg> telescope   <addressORregister>   ; PWNDBG specific; get the stack dump from gdb summary !!!!!!!!!!!!!**
-
+### PRINT STACK VALUES- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+```
+**gef>    dereference <addressORregister>   ; GEF SPECFIFIC; get the stack dump from gdb summary !!!!!!!!!!!!!!!**    
+**pwndbg> telescope   <addressORregister>   ; PWNDBG specific; get the stack dump from gdb summary !!!!!!!!!!!!!**    
+```
 
 **Dump Hex Values from STACK**
+```
 [pwndbg]: hexdump
 [pwndbg]: hexdump <addressORregister>
 [gef]:    hexdump
 [gef]:    hexdump <addressORregister>
-
+```
 
 
 ``` (gdb) =============================
@@ -83,10 +83,10 @@
 
 
 
-# DISASSEMBLY / INSTRUCTION VIEW - - - - - - - - - - - - - - - - - - - - - - - - - - -
+### DISASSEMBLY / INSTRUCTION VIEW - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-**gef>    cs <target>	 ; GEF & PWNDBG; includes rwx attributes**
-**pwndbg> u <target> 	 ; GEF & PWNDBG; includes rwx attributes**
+**gef>    cs <target>	 ; GEF & PWNDBG; includes rwx attributes**     
+**pwndbg> u <target> 	 ; GEF & PWNDBG; includes rwx attributes**    
 
 
 ``` (gdb)
@@ -105,16 +105,16 @@
 ```
 
 
-# REGISTERS- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+### REGISTERS- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-**pwndbg> regs**
-**gef> registers**
+**pwndbg> regs**   
+**gef> registers**   
 
 ``` (gdb)
     (gdb) info registers
 ```
 
-# VARIABLES- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+### VARIABLES- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 ```(gdb)
    (gdb) info args       ; arguments in current fucntion
    (gdb) info locals     ; local variables
@@ -122,15 +122,17 @@
 ```
 
 
-# STACK FRAME THAT CALLED THIS ONE - - - - - - - - - - - - - - - - -
+### STACK FRAME THAT CALLED THIS ONE - - - - - - - - - - - - - - - - -
+```
    pwndbg> up
-
+```
 
 ### Sections View- - - - - - - - - - - - - - - - - - - - - - - - - - -
+```
 [gdb]:    info files
 [gef]:    xfiles
 [pwndbg]: ???
-
+```
 
 
 
@@ -160,37 +162,38 @@
 
 -------------------------------------------------------------------------
 
-# USEFUL PWNDBG / GEF CMNDS
+### USEFUL PWNDBG / GEF CMNDS
 
-[split screens]: pwndbg [must use tmux for terminal]
-git clone https://github.com/jerdna-regeiz/splitmind
+[split screens]: pwndbg [must use tmux for terminal]     
+git clone https://github.com/jerdna-regeiz/splitmind     
 
-# instruction list
-	pwndbg> pwndbg
-	https://browserpwndbg.readthedocs.io/en/docs/
+### instruction list
+	pwndbg> pwndbg      
+	https://browserpwndbg.readthedocs.io/en/docs/    
 
-# objdump one function
-	$ objdump -d filename | sed '/<functionName>:/,/^$/!d'
+**objdump one function**
+`$ objdump -d filename | sed '/<functionName>:/,/^$/!d'`
 
-# GEF AND PWNDBG (HAS GEF's VIEW)
-	Set gdbinit to look for pwndbg
-	The run: $ gdb <binary> --command /location/.gdbinit-gef.py
- 
+**GEF AND PWNDBG (HAS GEF's VIEW)**
+```
+	Set gdbinit to look for pwndbg    
+	The run: $ gdb <binary> --command /location/.gdbinit-gef.py    
+```
 
 -------------------------------------------------------------------------
 
 
-# Quick tips other useful gdb commands
+### Quick tips other useful gdb commands
 
 
-[Use as shell]:
-* _pwndbg_ is in `shell mode`, so you can just _use it as a shell_
- - You can _call_ `shell` and run `exit` on that _shell_
+[Use as shell]:    
+* _pwndbg_ is in `shell mode`, so you can just _use it as a shell_    
+ - You can _call_ `shell` and run `exit` on that _shell_    
  
-`gef> shell <cmd>`
+`gef> shell <cmd>`    
 
 
-[Jump to Address/Function]:
+[Jump to Address/Function]:    
 ```
 j LINENUM
 j *Address
@@ -202,7 +205,7 @@ set $pc = 0xffffff
 
 -------------------------------------------------------------------------
 
-# Breaking
+### Breaking
 
 ### GEF/PWNDBG Break at Main
 	gef> 	entry-break		;gef specific
@@ -218,6 +221,7 @@ set $pc = 0xffffff
 	gdb> b <class>::<function>
 
 ### Break at multiple points and continue
+```
 	gdb> break main
 	gdb> start
 	gdb> run
@@ -225,7 +229,8 @@ set $pc = 0xffffff
 	gdb> break *0x10470
 	gdb> c
 	gdb> c
-
+```
+	
 ### Break on the instruction after this one
 	pwndbg> stepover	    ; pwndbg specific
 
@@ -239,122 +244,144 @@ set $pc = 0xffffff
 
 
 ### List and delete breakoints
+```
 	gdb> i b     ;list breakpoints
 	gdb> d 1	 ;delete breakpoint 1
 	gdb> d 1 2	 ;delete breakpoints 1 and 2
-
+```
+	
 -------------------------------------------------------------------------
 
-# Code flow (alter code flow)
+### Code flow (alter code flow)
+```
 	inst: [fp, #-8]
 	gdb> x $fp-8    		  ; let's say the address is 0x7efff49c
 	gdb> u <target-function>  ; let's say the address for target-function is 0x01047c
 	gdb> set *0x7efff49c=0x01047c
-
+```
 
 -------------------------------------------------------------------------
 
-# Execution
+### Execution
 
-### run with arguments
-	gdb> run arg1 arg2 agr3
+**Run with arguments**
+`gdb> run arg1 arg2 agr3`
 
-### run with piped arguments (when code uses gets)
+
+**Run with piped arguments (when code uses gets)**
+```
 	python 
 	gdb ./vuln_prog
 	run < filename_with_input
+```
+				 
+**Run with arguments (code accepts command line arguments)**
+     `gdb --args <binary> arg1 arg2 arg3`    
 
-### run with arguments (code accepts command line arguments)
-    gdb --args <binary> arg1 arg2 arg3
-
-  [Example]: gdb --args format0 $(python -c 'print "%64d\xef\xbe\xad\xde"')
-
-### Running multiple breakpoints
+  [Example]: gdb --args format0 $(python -c 'print "%64d\xef\xbe\xad\xde"')    
+   
+**Running multiple breakpoints**
+```
 	gdb> break main
 	gdb> run [args]
 	gdb> b <somewhere>
 	gdb> c
-
+```
+	
 -------------------------------------------------------------------------
 
-# Function
+### Function
 	
-### View (whole)
+**View (whole)**
+```
 	gdb> disassemble <function>
 	gef> cs <function>	; GEF SPECIFIC
-
-### List functions
+```
+	
+**List functions**
+```
 	The functions command will list all of the convenience functions provided by GEF.
 		$_bss([offset]) -- Return the current bss base address plus the given offset.
 		$_got([offset]) -- Return the current bss base address plus the given offset.
 		$_heap([offset]) -- Return the current heap base address plus an optional offset.
 		$_pie([offset]) -- Return the current pie base address plus an optional offset.
 		$_stack([offset]) -- Return the current stack base address plus an optional offset.
+```
 
 -------------------------------------------------------------------------
 
-# Get
+### HEAP
 
-### Get local variables
-
--------------------------------------------------------------------------
-
-# HEAP
-
-### Arenas (when multithreading)
+**Arenas (when multithreading)**
 	gef> heap arenas
 
-### Chunk
+**Chunk**
 	gef> heap chunks <location>
 
 
 -------------------------------------------------------------------------
 
-# Register information
+### Register information
+```
 	gdb> info registers
 	gef> registers			;GEF SPECIFIC (is similar to the summary at every step) !!!!!!!!!!!!
 	pwndbg> reg    			;PWNDBG SPECFIFIC                                       !!!!!!!!!!!!
 	pwndbg> xpsr			;pwndbg specific; see ARM/xPSR/CPSR register
-
-# See content of register
+```
+	
+**See content of register**
 	gdb> x/s $r3			; see string in r3 register
 
 -------------------------------------------------------------------------
 
-# Secrity configurations
+### Secrity configurations
+```
 	gef> checksec	; checks secruity configurations
 	gef> aslr		; checks if aslr is enabled
 	gef> canary		; checks canary
-
+```
+	
 -------------------------------------------------------------------------
 
-# Set variable
+### Set variable
+```
 	gdb> set {int}0x83040 = 4
 	gdb> set var idx = 1
-
-# Set register
+```
+	
+**Set register**
+```
 	gdb> set $r3=0xa3b4c5
-
-# Set memory
+```
+	
+**Set memory**
+```
 	gdb> set *0x7efff4b4=0x01044c
+```
 
-
-Tested:
+**Tested:**
+```
 	gdb> p $r3 = 1
-
+```
+	
 -------------------------------------------------------------------------
 
-# Shell Commands
+### Shell Commands
+```
 	gef/pwndbg> shell <command>
-
+```
+	
 -------------------------------------------------------------------------
 
-# Stepping quickly
+### Stepping quickly
+```
 	gdb> n        ;**(WON'T ENTER FUNCTION)**
 	gdb> s        ;**(WILL ENTER FUNCTION)**
-
+```
+	
 ### Next call (pwndbg specific)
+```
 	pwndbg> nextcall
-
+```
 
 
