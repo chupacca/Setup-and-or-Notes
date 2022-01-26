@@ -139,9 +139,10 @@ gef> registers
 
 
 ### View Contents - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-**gef>    xinfo <addressORregister>   ; gef & pwndbg; gives info about that part of memory**
-**pwndbg> xinfo <addressORregister>   ; gef & pwndbg; gives info about that part of memory**
+```
+gef>    xinfo <addressORregister>   ; gef & pwndbg; gives info about that part of memory
+pwndbg> xinfo <addressORregister>   ; gef & pwndbg; gives info about that part of memory
+```
 
 ```
 * By default just running `xinfo` gets information of the binary
@@ -149,10 +150,10 @@ gef> registers
 
 
 ### View mapped pages - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-**gef>    vmmap			; GEF & PWNDBG; includes rwx attributes**
-**pwndbg> vmmap			; GEF & PWNDBG; includes rwx attributes**
-
+```
+gef>    vmmap			; GEF & PWNDBG; includes rwx attributes
+pwndbg> vmmap			; GEF & PWNDBG; includes rwx attributes
+```
 
 ``` (gdb)
 	(gdb) info proc map
