@@ -1,7 +1,7 @@
 
-[BEST R2 Use Playlist]: https://www.youtube.com/watch?v=RbIxKM2QW8s&list=PLCwnLq3tOElpDyvObqsAI5crEO9DdBMNA
+BEST R2 Use Playlist: https://www.youtube.com/watch?v=RbIxKM2QW8s&list=PLCwnLq3tOElpDyvObqsAI5crEO9DdBMNA
 
-[Ghidra/Dec]: https://www.youtube.com/watch?v=hufgzz8nwNw
+Ghidra/Dec https://www.youtube.com/watch?v=hufgzz8nwNw
 ^short sweet video
 
 -----------------------------------------------------------
