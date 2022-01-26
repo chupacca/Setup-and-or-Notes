@@ -1,16 +1,19 @@
 **Reprint Pwndbg/GEF Output from every step**
+```
 [pwndbg]: context
 [gef]:    context
-
+```
 
 # Search `COMMANDS` and `CMD DESCRIPTIONS`
+```
 (gdb) apropos <search_term>
-
+```
 
 **Clear the Screen**
-[pwndbg]: shell clear
-[gef]:    shell clear
-
+```
+[pwndbg]: shell clear  
+[gef]:    shell clear  
+```
 
 **GDB OUT OF THE BOX**
 ``` (gdb)
