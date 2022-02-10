@@ -46,8 +46,9 @@
 
 ### PRINT `STACK VALUES` - - - - - - - - - - - - - - - - - - - - - - - - - - -
 ```
-gef>    dereference <addressORregister>   ; GEF SPECFIFIC; get the stack dump from gdb summary     
-pwndbg> telescope   <addressORregister>   ; PWNDBG specific; get the stack dump from gdb summary     
+gef>    dereference <addressORregister>   ; GEF SPECFIFIC; get the stack dump from gdb summary  
+pwndbg> telescope   <addressORregister>   ; PWNDBG specific; get the stack dump from gdb summary  
+pwndbg> stack                             ; PWNDBG -> prints the stack frame
 ```
 
 **Dump `HEX VALUES` from `STACK`**
