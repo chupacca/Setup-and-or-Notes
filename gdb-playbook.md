@@ -59,7 +59,12 @@ pwndbg> stack                             ; PWNDBG -> prints the stack frame
 [gef]:    hexdump <addressORregister>
 ```
 
+**STACK FRAME THAT CALLED THIS ONE**
+```
+   pwndbg> up
+```
 
+**SUMMARY**
 ```
   (gdb) =============================
 	(gdb) x/10x $sp             ; see first 10 HEX INTEGER from the STACK
@@ -83,7 +88,7 @@ pwndbg> stack                             ; PWNDBG -> prints the stack frame
 	pwndbg> telescope $esp $ebp-$esp ; [x86] trick to print stack frame
 ```
 
-
+-------------------------------------------------------------------------
 
 ### DISASSEMBLY / INSTRUCTION VIEW - - - - - - - - - - - - - - - - - - - - - - - - - - -
 ```
@@ -106,6 +111,7 @@ pwndbg> u <target> 	 ; GEF & PWNDBG; includes rwx attributes
 	pwndbg> u <function> [#]  ; prints # lines of color disassembly of function!!!!!!!!!!!!!!!!!!!
 ```
 
+-------------------------------------------------------------------------
 
 ### REGISTERS- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 ```
@@ -116,9 +122,6 @@ gef> registers
 ``` (gdb)
     (gdb) info registers
 ```
-
-
--------------------------------------------------------------------------
 
 ### Register information
 ```
@@ -132,8 +135,8 @@ gef> registers
 ```
 	
 **See content of register**
-	
 
+-------------------------------------------------------------------------
 
 ### VARIABLES- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 ```(gdb)
@@ -142,11 +145,6 @@ gef> registers
    (gdb) info variables  ; all variables
 ```
 
-
-### STACK FRAME THAT CALLED THIS ONE - - - - - - - - - - - - - - - - -
-```
-   pwndbg> up
-```
 
 ### Sections View- - - - - - - - - - - - - - - - - - - - - - - - - - -
 ```
