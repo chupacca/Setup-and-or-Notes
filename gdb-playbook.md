@@ -332,10 +332,14 @@ set $pc = 0xffffff
 ### HEAP
 
 **Arenas (when multithreading)**
+```
 	gef> heap arenas
+```
 
 **Chunk**
+```
 	gef> heap chunks <location>
+```
 
 -------------------------------------------------------------------------
 
