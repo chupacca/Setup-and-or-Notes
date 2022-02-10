@@ -1,3 +1,5 @@
+### `PWNDBG/GEF` Useful Commands Out of the Box
+
 **Reprint Pwndbg/GEF Output from every step**
 ```
 [pwndbg]: context
@@ -17,7 +19,7 @@
 
 -------------------------------------------------------------------------
 
-**GDB OUT OF THE BOX**
+### GDB OUT OF THE BOX
 ``` (gdb)
     b *(main+33)  ; allows method names w/ offsets
 
@@ -61,7 +63,7 @@ pwndbg> stack                             ; PWNDBG -> prints the stack frame
 [gef]:    hexdump <addressORregister>
 ```
 
-**STACK FRAME THAT CALLED THIS ONE**
+**`STACK FRAME` THAT CALLED THIS ONE**
 ```
    pwndbg> up
 ```
