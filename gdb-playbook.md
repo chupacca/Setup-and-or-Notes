@@ -15,6 +15,8 @@
 [gef]:    shell clear  
 ```
 
+-------------------------------------------------------------------------
+
 **GDB OUT OF THE BOX**
 ``` (gdb)
     b *(main+33)  ; allows method names w/ offsets
