@@ -84,6 +84,7 @@ pwndbg> stack                             ; PWNDBG -> prints the stack frame
 	gef> dereference $esp $ebp-$esp  ; [x86] trick to print stack frame
 
   PWNDBG =============================
+  	pwndbg> stack			 ; PWNDBG - Get Stack Frame
 	pwndbg> telescope $sp            ; PWNDBG specific; get the stack dump from gdb summary !!!!!!!!!!!!!
 	pwndbg> telescope $sp [#]        ; PWNDBG specific; print that many elements from stack !!!!!!!!!!!!!
 	pwndbg> telescope $sp $fp-$sp  	 ; [ARM] trick to print stack frame
