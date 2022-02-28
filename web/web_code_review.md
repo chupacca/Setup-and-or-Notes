@@ -125,4 +125,9 @@ export GRDIR=/path/to/graudit/signatures
 **JAVA**
 1. `ag @Operation` / `ag Operation`
   + May point to _api entry point_
- 
+2. `ag url`
+  + May point to _api entry point_
+3. `ag request`
+  + May point to _api entry point_
+4. `ag \.get`
+  + May point to _api entry point_
