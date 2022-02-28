@@ -125,30 +125,30 @@ jsnice.org
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-* Script Gadgets _convert otherwise safe HTML tags and attributes into arbitrary JS code execution_
- + Example:
-   data-text="&lt;script&gt;"    --BECOMES-->    <script>
- 
- 
-**Example**
-
-  <div data-role="button" data-text="&lt;script&gt;alert(1)&lt;/script&gt;"></div>
-                  ^
-                  |
-                  |
-```Selectors-XSS-Example
-  <script>
-   var buttons = $("[data-role=button]");
-   buttons.attr("style", "...");
-   // [...]
-   buttons.html(button.getAttribute("data-text")); // <--- Script Gadget HERE!!!
-  </script>
-```
-                  |
-                  |
-                  v
-  <div data-role="button" data-text="<script>alert(1)</script>"></div>
-                                      ^---- some sanitizers don't touch data attributes
+* Script Gadgets _convert otherwise safe HTML tags and attributes into arbitrary JS code execution_  
+ + Example:  
+   data-text="&lt;script&gt;"    --BECOMES-->    <script>  
+   
+   
+**Example**  
+  
+  <div data-role="button" data-text="&lt;script&gt;alert(1)&lt;/script&gt;"></div>  
+                  ^  
+                  |  
+                  |  
+```Selectors-XSS-Example  
+  <script>  
+   var buttons = $("[data-role=button]");  
+   buttons.attr("style", "...");  
+   // [...]  
+   buttons.html(button.getAttribute("data-text")); // <--- Script Gadget HERE!!!  
+  </script>  
+```  
+                  |  
+                  |  
+                  v  
+  <div data-role="button" data-text="<script>alert(1)</script>"></div>  
+                                      ^---- some sanitizers don't touch data attributes  
   
 ------------------------------------------------------------------------------------
 
