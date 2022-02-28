@@ -46,7 +46,7 @@ export GRDIR=/path/to/graudit/signatures
 `semgrep --config=p/r2c-ci path/to/src`
 
 
-**===== Queries =====**
+**===== Queries =====**  
 `semgrep --config p/minusworld.java-httpservlet-jsp-xss`
 `semgrep --config p/minusworld.flask-xss`
 
