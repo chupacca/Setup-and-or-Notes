@@ -117,12 +117,12 @@ export GRDIR=/path/to/graudit/signatures
 -------------------------------------------------------------
 
 
-# Keyword Searches
+# Keyword Searches  
 
 + Use `silver_searcher-ag` instead of `grep`
-[silver_searcher-ag]: https://github.com/ggreer/the_silver_searcher
+[silver_searcher-ag]: https://github.com/ggreer/the_silver_searcher  
 
-**JAVA**
+**JAVA**  
 [List of Methods]: https://thecodemaster.net/methods-considered-sources-sinks-sanitization/
 
 1. `ag @Operation` / `ag Operation`
