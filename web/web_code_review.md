@@ -123,6 +123,8 @@ export GRDIR=/path/to/graudit/signatures
 [silver_searcher-ag]: https://github.com/ggreer/the_silver_searcher
 
 **JAVA**
+[List of Methods]: https://thecodemaster.net/methods-considered-sources-sinks-sanitization/
+
 1. `ag @Operation` / `ag Operation`
   + May point to _api entry point_
 2. `ag url`
