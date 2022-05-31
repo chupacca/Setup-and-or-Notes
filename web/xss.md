@@ -8,7 +8,7 @@
 
 **Cheat Sheet**
 [Portswigger Cheat Sheet]: https://portswigger.net/web-security/cross-site-scripting/cheat-sheet
-[Above Downloaded File]: /sec/web/xss/xss-cheat-sheet.pdf
+[Above Downloaded File]: /local/dir/xss-cheat-sheet.pdf
 
 **Other Resources**
 [AppSecEU Slides & Videos]: https://2017.appsec.eu/slides-and-videos
