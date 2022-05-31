@@ -1,8 +1,10 @@
 # DOM XSS
-Explaination: https://owasp.org/www-community/attacks/DOM_Based_XSS
-Sinks: https://portswigger.net/web-security/cross-site-scripting/dom-based
-Script Gadgets: /sec/web/xss/Bypassing XSS mitigations via Script gadgets.pdf
-DOM XSS Wiki: https://github.com/wisec/domxsswiki/wiki
+
+[Explaination]: https://owasp.org/www-community/attacks/DOM_Based_XSS
+[Sinks]: https://portswigger.net/web-security/cross-site-scripting/dom-based
+[Script Gadgets]: /sec/web/xss/Bypassing XSS mitigations via Script gadgets.pdf
+
+[DOM XSS Wiki]: https://github.com/wisec/domxsswiki/wiki
 
 ### Table of Contents 
 1. Look For Something in HTML that does _dynamic code execution_
@@ -123,31 +125,31 @@ jsnice.org
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-* Script Gadgets _convert otherwise safe HTML tags and attributes into arbitrary JS code execution_  
- + Example:  
-   data-text="&lt;script&gt;"    --BECOMES-->    <script>  
-   
-   
-**Example**  
+* Script Gadgets _convert otherwise safe HTML tags and attributes into arbitrary JS code execution_
+ + Example:
+   data-text="&lt;script&gt;"    --BECOMES-->    <script>
+ 
+ 
+**Example**
+
+  <div data-role="button" data-text="&lt;script&gt;alert(1)&lt;/script&gt;"></div>
+                  ^
+                  |
+                  |
+```Selectors-XSS-Example
+  <script>
+   var buttons = $("[data-role=button]");
+   buttons.attr("style", "...");
+   // [...]
+   buttons.html(button.getAttribute("data-text")); // <--- Script Gadget HERE!!!
+  </script>
 ```
-  <div data-role="button" data-text="&lt;script&gt;alert(1)&lt;/script&gt;"></div>  
-                  ^  
-                  |  
-                  |  
-  //Selectors-XSS-Example  
-  <script>  
-   var buttons = $("[data-role=button]");  
-   buttons.attr("style", "...");  
-   // [...]  
-   buttons.html(button.getAttribute("data-text")); // <--- Script Gadget HERE!!!  
-  </script>  
-                  |  
-                  |  
-                  v  
-  <div data-role="button" data-text="<script>alert(1)</script>"></div>  
-                                      ^---- some sanitizers don't touch data attributes  
-```  
-    
+                  |
+                  |
+                  v
+  <div data-role="button" data-text="<script>alert(1)</script>"></div>
+                                      ^---- some sanitizers don't touch data attributes
+  
 ------------------------------------------------------------------------------------
 
 ### 6. Some DOM JS Sinks
