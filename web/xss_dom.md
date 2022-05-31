@@ -1,13 +1,8 @@
 # DOM XSS
-```
-[Explaination]: https://owasp.org/www-community/attacks/DOM_Based_XSS
-
-[Sinks]: https://portswigger.net/web-security/cross-site-scripting/dom-based
-
-[Script Gadgets]: /sec/web/xss/Bypassing XSS mitigations via Script gadgets.pdf
-
-[DOM XSS Wiki]: https://github.com/wisec/domxsswiki/wiki
-```
+Explaination: https://owasp.org/www-community/attacks/DOM_Based_XSS
+Sinks: https://portswigger.net/web-security/cross-site-scripting/dom-based
+Script Gadgets: /sec/web/xss/Bypassing XSS mitigations via Script gadgets.pdf
+DOM XSS Wiki: https://github.com/wisec/domxsswiki/wiki
 
 ### Table of Contents 
 1. Look For Something in HTML that does _dynamic code execution_
