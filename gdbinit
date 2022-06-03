@@ -1,13 +1,17 @@
-# GEF
-#source /home/test/.gdbinit-gef.py
+# 1) Setup Pwndbg and GEF
 
+# GEF
+#source /home/test/.gdbinit-gef.py    # change to your directory
 # PWNDBG
-source /home/test/pwndbg/gdbinit.py
-source /home/test/pwndbg/splitmind/gdbinit.py
+source /home/test/pwndbg/gdbinit.py   # change to your directory
+
+# 2) Setup tmux & splitmind
 
 ## PWNDBG - Split screen w/ tmux & splitmind
 ### sudo apt install tmux
 ### git clone https://github.com/jerdna-regeiz/splitmind
+
+source /home/test/pwndbg/splitmind/gdbinit.py    # change to your directory
 
 
 python
