@@ -1,0 +1,3 @@
+In the embedded directory:
+
+embedded/tracks/ARMCortexA-azeria
