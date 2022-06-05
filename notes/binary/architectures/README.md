@@ -1,1 +1,1 @@
-### This if for information on different architectures
+### This is for information on different architectures
