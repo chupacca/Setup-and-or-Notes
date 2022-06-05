@@ -4,7 +4,7 @@
 Exploit DB: https://www.exploit-db.com/  
 
 ### Crypto
-David Wong Blog]: https://cryptologie.net/   
+David Wong Blog: https://cryptologie.net/   
 
 ### Playbooks
 HackTricks: https://book.hacktricks.xyz/welcome/readme  
