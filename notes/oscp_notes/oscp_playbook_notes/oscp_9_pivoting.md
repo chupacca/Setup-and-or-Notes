@@ -47,17 +47,17 @@ forward traffic   |    |          traffic
 
 [Screenshots from this video]: https://www.youtube.com/watch?v=JKrO5WABdoY
 
-1. `ssh -L2001:localhost:143 user1@HostB`
+1. `ssh -L2001:localhost:143 user1@HostB`  
 ![Local Forwarding Localhost](port_forwarding_screenshots/1_Local-Forward_localhost.png)
 
-2. `ssh -L2001:HostD:143 user1@HostB`
+2. `ssh -L2001:HostD:143 user1@HostB`  
 ![Local Forwarding Separate Host ](port_forwarding_screenshots/2_Local-Forwarding_Separate-Host.png)
 
 
-3. `ssh -g -L2001:HostD:143 user1@HostB`
+3. `ssh -g -L2001:HostD:143 user1@HostB`  
 ![Local Forwarding GW Port & Separate Host ](port_forwarding_screenshots/3_Local-Forwarding_GW-Port_And_Separate-Host.png)
 
-4. `ssh -R2001:localhost:143 user1@HostB`
+4. `ssh -R2001:localhost:143 user1@HostB`  
 ![Remote Forwarding ](port_forwarding_screenshots/4_Remote-Forwarding.png)
 
 
