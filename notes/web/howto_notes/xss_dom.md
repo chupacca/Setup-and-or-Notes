@@ -155,10 +155,12 @@ jsnice.org
 ### 6. Some DOM JS Sinks
 
 [Wiki for Sources]: https://github.com/wisec/domxsswiki/wiki/sources
-
+[Portswigger Sinks]: https://portswigger.net/web-security/cross-site-scripting/dom-based
+    
 ```Potential_Sources
     document.URL
     document.documentURI
+    document.cookie
     document.URLUnencoded (IE 5.5 or later Only)
     document.baseURI
     location
@@ -166,6 +168,8 @@ jsnice.org
     location.search
     location.hash
     location.pathname
+    window.localStorage     <-- might contain session tokens
+    window.document.cookie
 ```
 
 ------------------------------------------------------------------------------------
