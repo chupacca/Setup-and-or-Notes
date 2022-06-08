@@ -17,6 +17,10 @@
   + Web App Code Review 
   + Web App Specific Language Review
 
+  + Arachni: https://github.com/Arachni/arachni
+  + skipfish: https://www.kali.org/tools/skipfish/
+  + wapiti: https://wapiti-scanner.github.io/ 
+
 ------------------------------------------------------------------------
 ------------------------------------------------------------------------
 
