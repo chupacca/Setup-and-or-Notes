@@ -22,49 +22,50 @@
 
 [Search for DOM-Based XSS]: https://www.youtube.com/watch?v=ojiOCfg-FXU
 
-1. Look For Something in HTML that does _dynamic code execution_
+# 1. Look For Something in HTML that does _dynamic code execution_
   + Such as:
    - `eval()`
    - `innerHTML`
 
-**JS Beautify**
+##     a) JS Beautify
 beautifier.io 
 jsnice.org
+  
+##     b) BURP Tools
+  xssValidator: https://www.youtube.com/watch?v=USc9OGGgtT8
 
-**BURP Tools**
-[xssValidator]: https://www.youtube.com/watch?v=USc9OGGgtT8
+##     c) Tools
 
-**Tools**
+  XSpear: https://github.com/hahwul/XSpear
+  Using XSpear: https://www.youtube.com/watch?v=W4VN1u2lv2U
 
-[XSpear]: https://github.com/hahwul/XSpear
-[Using XSpear]: https://www.youtube.com/watch?v=W4VN1u2lv2U
+  ParamSpider -> Gxss -> Dalfox: https://www.youtube.com/watch?v=6rkk3v2a7WQ
 
-[ParamSpider -> Gxss -> Dalfox]: https://www.youtube.com/watch?v=6rkk3v2a7WQ
+  Param Spider: https://github.com/devanshbatham/ParamSpider
+  + `python3 paramspider.py -- doman <url> -o ~/Downloads/paramSpider.txt`
 
-[Param Spider]: https://github.com/devanshbatham/ParamSpider
-`python3 paramspider.py -- doman <url> -o ~/Downloads/paramSpider.txt`
+  Gxss: https://github.com/KathanP19/Gxss
+  + `cat paramSpider.txt | Gxss`
+  + `cat paramSpider.txt | Gxss -p user`
 
-[Gxss]: https://github.com/KathanP19/Gxss
-`cat paramSpider.txt | Gxss`
-`cat paramSpider.txt | Gxss -p user`
+  Dalfox: https://github.com/hahwul/dalfox
+  Using DalFox: https://www.youtube.com/watch?v=m64aviF1Two
+  + `dalfox url <url>`
+  + `cat paramSpider.txt | Gxss -p user | dalfox pip --mining-dict /dir/to/params.txt --skip-bav`
 
-[Dalfox]: https://github.com/hahwul/dalfox
-[Using DalFox]: https://www.youtube.com/watch?v=m64aviF1Two
-+ `dalfox url <url>`
-`cat paramSpider.txt | Gxss -p user | dalfox pip --mining-dict /dir/to/params.txt --skip-bav`
-
-
-------------------------------------------------------------------------------------
-
-2. Most common source (attacker supplied input) is in the _URL_
-  + such as anything after the `#` symbol like `xss-game.com/level3#3' onerror='alert(1)'`
 
 ------------------------------------------------------------------------------------
 
-### 3. Look For _Selectors_
+# 2. Most common source (attacker supplied input) is in the _URL_
+ + such as anything after the `#` symbol like
+   `xss-game.com/level3#3' onerror='alert(1)'`
 
-  + JavaScript **interacts with the DOM** via so-called _selectors_
-    ```Basic_Examples
+------------------------------------------------------------------------------------
+
+# 3. Look For _Selectors_
+
++ JavaScript **interacts with the DOM** via so-called _selectors_
+  ```Basic_Examples
     <myTag id="someId" class="class1” data-foo="bar"></myTag>
     <script>
      tags = document.querySelectorAll("myTag");           // by tag name
@@ -73,7 +74,7 @@ jsnice.org
      tags = document.querySelectorAll("[data-foo]");      // by attribute name
      tags = document.querySelectorAll("[data-foo^=bar]"); // by attribute value
     </script>
-    ```
+  ```
 
 + _jQuery_ - Almost every website uses it 
  - **Look for the `$` for jQuerys**
@@ -84,7 +85,7 @@ jsnice.org
 
 ------------------------------------------------------------------------------------
 
-### 4. Access Forms via their name
+# 4. Access Forms via their name
 
 <div id=a></div>
 <form name=querySelector></form>
@@ -95,7 +96,7 @@ jsnice.org
 
 ------------------------------------------------------------------------------------
 
-### 5. Script Gadgets
+# 5. Script Gadgets
 
 [LiveOverflow]: https://www.youtube.com/watch?v=aCexqB9qi70
 
@@ -152,7 +153,7 @@ jsnice.org
   
 ------------------------------------------------------------------------------------
 
-### 6. Some DOM JS Sinks
+# 6. Some DOM JS Sinks
 
 [Wiki for Sources]: https://github.com/wisec/domxsswiki/wiki/sources
 [Portswigger Sinks]: https://portswigger.net/web-security/cross-site-scripting/dom-based
@@ -174,7 +175,7 @@ jsnice.org
 
 ------------------------------------------------------------------------------------
 
-### 6. Some DOM JS Sinks
+# 7. Some DOM JS Sinks
 
 [Wiki for Sinks]: https://github.com/wisec/domxsswiki/wiki/Sinks
 

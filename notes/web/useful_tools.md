@@ -1,25 +1,20 @@
 ### TABLE OF CONTENTS 
-1. APPLICATION 
-
-2. BROWSER PLUGINS 
-
-3. BURP TOOLS 
+#### 1. APPLICATION 
+#### 2. BROWSER PLUGINS 
+#### 3. BURP TOOLS 
   + Authorization / Authentication 
   + Graph QL
   + Nice to Have / Quality of Life 
   + Race Condition / Timing 
   + SQLi 
   + XSS 
-  
-4. CLI TOOLS - COMMAND LINE TOOLS 
+#### 4. TESTING TOOLS
   + Docker (Pull)
   + Dependency Review 
   + Web App Code Review 
-  + Web App Specific Language Review
-
-  + Arachni: https://github.com/Arachni/arachni
-  + skipfish: https://www.kali.org/tools/skipfish/
-  + wapiti: https://wapiti-scanner.github.io/ 
+  + Web App (Language Specific) Code Review
+  + Web App Testing Tools
+  + Remote Server that I Control
 
 ------------------------------------------------------------------------
 ------------------------------------------------------------------------
@@ -37,15 +32,18 @@
 
 # BROWSER PLUGINS 
 
+  **Cookies**
 + Cookie Editor (Firefox & Chrome)
 + Cookie Editor [Family] (Chrome)
  - Has a picture of a _family of cookies_
 
+  **Payloads/Injections - Convenience**
 + HackTools (Firefox & Chrome)
  - `useful things` like _payloads_
   * _XSS, Reverse Shells, etc._
   * Has `msfvenom`
 
+  **Web App - What's Used**
 + Wappalyzer (Firefox & Chrome)
  - analyzes `web app` to find _what it's using_
  
@@ -105,29 +103,32 @@
 
 # CLI TOOLS - COMMAND LINE TOOLS
 
+- - - - - - - - - - - - - - - - - - - - -
+
 ## Docker (Pull)
-  [mpepping/cyberchef]: https://hub.docker.com/r/mpepping/cyberchef
+   mpepping/cyberchef: https://hub.docker.com/r/mpepping/cyberchef
    - Use `cyberchef functionality` _offline_
 
+- - - - - - - - - - - - - - - - - - - - -
 
 ## Dependency Review
-  [AppThreat/dep-scan]: https://github.com/AppThreat/dep-scan
+   AppThreat/dep-scan: https://github.com/AppThreat/dep-scan
 
 - - - - - - - - - - - - - - - - - - - - -
 
 ## Web App Code Review
-  [graudit]: https://github.com/wireghoul/graudit
-  [semgrep]: https://github.com/returntocorp/semgrep
-  [silversearcher-ag]: https://github.com/ggreer/the_silver_searcher
+   graudit: https://github.com/wireghoul/graudit
+   semgrep: https://github.com/returntocorp/semgrep
+   silversearcher-ag: https://github.com/ggreer/the_silver_searcher
 
 - - - - - - - - - - - - - - - - - - - - -
 
-## Web App Specific Language Review
+## Web App (Language Specific) Code Review
 
  **GO**
-  [gosec]: https://github.com/securego/gosec
+   gosec: https://github.com/securego/gosec
    - `Go` security review
-  [gokart]: https://github.com/praetorian-inc/gokart
+   gokart: https://github.com/praetorian-inc/gokart
    -  `Go` security review
    
  **JAVASCRIPT**
@@ -135,19 +136,45 @@
    - `Javascript` security review
 
  **PYTHON**
-  [bandit]: https://bandit.readthedocs.io/en/latest/start.html
+   bandit: https://bandit.readthedocs.io/en/latest/start.html
    - `Python` security review
    
- **RUBY**
-  [brakeman]: https://github.com/presidentbeef/brakeman
+ **RUBY on Rails**
+   brakeman: https://github.com/presidentbeef/brakeman
    - `Ruby on Rails` security review
 
 - - - - - - - - - - - - - - - - - - - - -
 
-## Web App Tools 
+## Web App Testing Tools 
 
-[sqlmap]: https://github.com/sqlmapproject/sqlmap
-[xsshunter]: https://github.com/mandatoryprogrammer/xsshunter-express
+  **Crawling / Mapping Application**
+skipfish: https://www.kali.org/tools/skipfish/
+
+  **Injection Test**
+sqlmap:    https://github.com/sqlmapproject/sqlmap
+xsshunter: https://github.com/mandatoryprogrammer/xsshunter-express
+  
+  **Web App Scanner** 
+Arachni: https://github.com/Arachni/arachni
+ + Feature-full 
+wapiti:  https://wapiti-scanner.github.io/ 
+ + Black Box Scanner 
+
+- - - - - - - - - - - - - - - - - - - - -
+
+## Remote Server that I Control 
+
++ Surge: https://hakluke.com/how-to-use-surge-the-perfect-host-for-xss-payloads/
+ - For remote web servers to do things like SSRF,
+   XSS, etc.
+   ```Use
+      npm install --global surge
+      cd <folder with things I want to hose>
+      surge   # Can just make up credentials for https cert
+       # First time you run it will involve setup, if website 
+       #  given doesn't work just run `surge` again and press 
+       #  enter quickly so the generated URL works.
+   ```
 
 - - - - - - - - - - - - - - - - - - - - -
 
