@@ -205,7 +205,7 @@ Tempte:              | Example:
  - Just throw in a _'_ or _`_ to see if it works
 
 
-### Execution - Table of Contents 
+### Bypass Filter/Sanitization - Table of Contents 
  1. Polyglot 
  2. Bypass Filters 
  3. XSS Payload Without = `javascript:`, `on*=*`, `alert()`
