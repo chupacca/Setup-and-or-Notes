@@ -18,6 +18,10 @@
 
 `alert(document.cookie)`
 
+**Document Model**
+![DOM Model](screenshots/document_object_model.png)
+
+
 ------------------------------------------------------------------------------------
 
 [Search for DOM-Based XSS]: https://www.youtube.com/watch?v=ojiOCfg-FXU
