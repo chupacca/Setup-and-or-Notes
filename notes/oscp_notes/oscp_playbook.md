@@ -32,24 +32,36 @@
 * Assuming you're already connected to the VPN
 * I'm also assuming you're just starting at a VM
 
+- - - - - - - - - - - - - - - - - - - - -
+
 1. Run `ifconfig, ipconfig, or ip addr` to see what IP range you are
 
   + We're going to target the **last octet** of your IP address
    -  So if `10.11.1.12`, then we're targeting where the `12`
 
+- - - - - - - - - - - - - - - - - - - - -
 
-2. Use `Basic_Masscan` and/or `Subdomain_Scanning`
+2. Use `network scanning` / `Subdomain_Scanning` / `SMB Enumeration`
+    etc.
 
-  + Look at _Masscan_ section &
-    look at _Subdomain NMAP Scans_ in the the _NMAP_ section from:
-    `oscp_playbook_notes/oscp_2_enmeration_network_scan.md`
+  + Look at:
+    `oscp_playbook_notes/oscp_4_enmeration_network_scan.md`
     
   + When doing _Network Scanning_ hold results in a _separate directory_
 
+- - - - - - - - - - - - - - - - - - - - -
 
-3. **CONDITION: `Port 80 or 443 Open?`:** Try opening it in a **browser**
+3. Have one scanner doing _fast scan_ and another doing _in depth scan_
+Example: https://www.youtube.com/watch?v=M4J0tH5vk_k
+  + `Rustscan` for the fast scan 
+  + `nmapautomator` for in depth scan
+
+- - - - - - - - - - - - - - - - - - - - -
+
+4. **CONDITION: `Port 80 or 443 Open?`:** Try opening it in a **browser**
   + Go to the **Web Stuff** section below
 
+- - - - - - - - - - - - - - - - - - - - -
 
 --------------------------------------------------------------
 --------------------------------------------------------------

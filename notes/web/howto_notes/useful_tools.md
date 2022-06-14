@@ -21,11 +21,18 @@
 
 # APPLICATION 
 
-[App Any Run]: https://app.any.run/
+App Any Run: https://app.any.run/
+
 + This helps you `monitor` what else an `application` is _up to_
  - _networking_ done in backgroud
  - _file_ usage/storage
  - etc.
+
+**Vulnerability Scanners**
+Nessus 
+OpenVAS 
+joomscan: https://github.com/OWASP/joomscan
+
 
 ------------------------------------------------------------------------
 ------------------------------------------------------------------------
