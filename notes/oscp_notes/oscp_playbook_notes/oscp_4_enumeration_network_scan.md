@@ -12,9 +12,16 @@
 ----------------------------------------------------------------------
 ----------------------------------------------------------------------
 
-## 1) RUSTSCAN
+## 1) RUSTSCAN ---------------------------------
 
-  + Docker Installation
+**Usage**
+Reference: https://github.com/RustScan/RustScan/wiki/Things-you-may-want-to-do-with-RustScan-but-don't-understand-how
+
+   + One IP Address: `rustscan -a <IP>`
+   + Multiple IP Addresses: `rustscan -a <IP>/24`
+
+### Installation & Setup 
+  + Docker
     ```Debian_Installation
     sudo apt install -y docker.io
     sudo systemctl enable docker --now
@@ -33,8 +40,8 @@
                     rustscan/rustscan:2.0.0'
      ```
 
-  + Linux
-    ```Debian_Installations 
+  + Source: From Source Code 
+    ```DebianLinux_Installations 
     curl https://sh.rustup.rs -sSf | sh
         + Use _1_ for default installation 
         + cargo will be install with it 
@@ -45,18 +52,50 @@
     ```
    - Execution: `cd RustScan/release/rustscan`
 
-  + Other Installation Rust
-   - MacOS:   `brew install rustscan`
+  + MacOS Installation: `brew install rustscan`
+
 
 ----------------------------------------------------------------------
 ----------------------------------------------------------------------
 
-## 2) NMAPAUTOMATOR
+## 2) NMAPAUTOMATOR ----------------------------
+
+**Usage**
+   - `./nmapAutomator <IP> all`
+
+### Installation & Setup 
+Guide: https://linuxhint.com/nmapautomator/
+
+```Install_Dependencies_Involving_GO:
+    # Download go tar from https://go.dev/doc/install
+    cd ~/Downloads 
+    sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.#.#.linux-amd64.tar.gz
+    export PATH=$PATH:/usr/local/go/bin
+    
+    # Since `go get` is depreceated, USE THIS: 
+    go install github.com/OJ/gobuster@latest
+```
+```Install_DebianLinux_Dependencies
+    sudo apt install nmap libwhisker2-perl nikto
+    reboot 
+    cd /tmp
+    git clone https://github.com/vulnersCom/nmap-vulners.git
+    cd nmap-vulners
+    cp *.nse /usr/share/nmap/scripts
+```
+```Install_nmapAutomator 
+    cd $tools 
+    git clone https://github.com/21y4d/nmapAutomator.git
+    sudo ln -s $(pwd)/nmapAutomator/nmapAutomator.sh /usr/local/bin/
+    cd nmapAutomator
+    chmod +x nmapAutomator.sh
+    ln -s nmapAutomator.sh /usr/local/bin
+```
 
 ----------------------------------------------------------------------
 ----------------------------------------------------------------------
 
-## 3) NMAP
+## 3) NMAP -------------------------------------
 
 ### Nmap Table of Contents
    1. Basic NMAP Scans 
@@ -113,7 +152,7 @@ nmap 10.11.1.X --top-ports 100
 ----------------------------------------------------------------------
 ----------------------------------------------------------------------
 
-## 4) MASSSCAN
+## 4) MASSSCAN ---------------------------------
 
 **USE RUSTSCAN INSTAEAD** 
 
@@ -124,7 +163,7 @@ masscan -p22,80,445 192.168.1.0/24
 ----------------------------------------------------------------------
 ----------------------------------------------------------------------
 
-## 5) WIRESHARK 
+## 5) WIRESHARK --------------------------------
 + If **Wireshark is available**, open it and see what `IP`s are
   communicating with your machine
  - Or try **install it**
@@ -132,7 +171,7 @@ masscan -p22,80,445 192.168.1.0/24
 ----------------------------------------------------------------------
 ----------------------------------------------------------------------
 
-## 6) DNS SCANNING 
+## 6) DNS SCANNING -----------------------------
 
 **nslookup**
 **dig**
@@ -140,7 +179,7 @@ masscan -p22,80,445 192.168.1.0/24
 ----------------------------------------------------------------------
 ----------------------------------------------------------------------
 
-## 7) SMB Enumerations 
+## 7) SMB Enumerations -------------------------
 
   **WINDOWS**
 

@@ -34,7 +34,7 @@
 
 - - - - - - - - - - - - - - - - - - - - -
 
-1. Run `ifconfig, ipconfig, or ip addr` to see what IP range you are
+1. Run `ifconfig, ipconfig, or ip addr` to see what IP subnet you're in
 
   + We're going to target the **last octet** of your IP address
    -  So if `10.11.1.12`, then we're targeting where the `12`
