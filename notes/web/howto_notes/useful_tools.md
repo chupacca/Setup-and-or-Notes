@@ -153,19 +153,26 @@ joomscan: https://github.com/OWASP/joomscan
 - - - - - - - - - - - - - - - - - - - - -
 
 ## Web App Testing Tools 
+  * Also look at OSCP notes for tools (like nmapAutomator)
 
   **Crawling / Mapping Application**
 skipfish: https://www.kali.org/tools/skipfish/
 
   **Injection Test**
 sqlmap:    https://github.com/sqlmapproject/sqlmap
+nosqlmap: https://latesthackingnews.com/2018/12/11/nosqlmap-open-source-audit-and-attack-nosql-databases/
 xsshunter: https://github.com/mandatoryprogrammer/xsshunter-express
-  
+dalfox (xss): https://latesthackingnews.com/2021/03/08/dalfox-an-automated-xss-finder/
+tqlmap (SSTI): https://latesthackingnews.com/2018/08/27/tplmap-open-source-tool-to-scan-for-server-side-template-injection-vulnerabilities/
+
   **Web App Scanner** 
 Arachni: https://github.com/Arachni/arachni
  + Feature-full 
 wapiti:  https://wapiti-scanner.github.io/ 
  + Black Box Scanner 
+
+Joomscan: https://latesthackingnews.com/2018/12/13/joomscan-open-source-joomla-vulnerability-scanner/
+ + joomla based sites 
 
 - - - - - - - - - - - - - - - - - - - - -
 

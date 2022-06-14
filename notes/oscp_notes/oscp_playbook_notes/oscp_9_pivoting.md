@@ -1,7 +1,8 @@
-# Pivoting ↓↳
+# Pivoting 🔄 ↓↳
 
 ### Table of Contents
 1. Port Forwarding With SSH
+2. Active Directory
 
 ### DOOM EMACS - Inline Images
    1. Set the `config.el` as I have it
@@ -106,3 +107,8 @@ By default, anyone (even on different machines) can connect to the specified por
 ---------------------------------------------------------
 ---------------------------------------------------------
 
+# 2) ACTIVE DIRECTORY 
+
+
+---------------------------------------------------------
+---------------------------------------------------------

@@ -3,6 +3,20 @@
 ---------------------------------------------------------------
 ---------------------------------------------------------------
 
+# BOTH 
+
+### Both: Table of Contents 
+   1. Do You Have Source Code? 
+   
+   
+## 1) Do You Have Source Code?
+
+**Check for Hardcoded Secrets / Credentials**
+dumpsterdiver: https://latesthackingnews.com/2018/07/10/dumpsterdiver-the-tool-for-finding-hardcoded-secrets/
+
+---------------------------------------------------------------
+---------------------------------------------------------------
+
 # LINUX 
 
 ### Linux: Table of Contents 
@@ -29,9 +43,9 @@
     
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-## 3) Try using Linux Exploit Suggester
-   [Linux Exploit Suggester]: https://github.com/mzet-/linux-exploit-suggester
-
+## 3) Try using a Linux Exploit Suggester
+Linux Exploit Suggester: https://github.com/mzet-/linux-exploit-suggester
+PrivilegeEsc-Linux: https://latesthackingnews.com/2018/12/12/privilegeesc-linux-open-source-script-for-enumeration-on-linux/
 
   + Clone the repo 
     `git clone https://github.com/mzet-/linux-exploit-suggester.git`

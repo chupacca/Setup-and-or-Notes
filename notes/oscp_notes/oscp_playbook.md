@@ -1,3 +1,5 @@
+# OSCP PLAYBOOK
+
 ### Files to pair this playbook with
 
 **LOOK AT a_youtube_notes.md**
@@ -8,25 +10,40 @@
 
 - - - - - - - - - - - - - - - - - - - - - -
 
+### Tools OSCP said I Can Use
+BloodHound
+SharpHound
+PowerShell Empire
+Covenant 
+Powerview
+Rubeus
+evil-winrm
+Responder (Poisoning and Spoofing is not allowed in the labs or on the exam)
+Crackmapexec
+Mimikatz
+ 
 ### Table of Contents
 1.  Enumeration: Network Scanning 🌐
 2.  Web Stuff: Enumeration 🕸️
 3.  Web Stuff: Exploitation 🕸️
-4.  PrivEsc 🛗: Once You Have a Shell 🪜
+4.  PRIVESC 🛗: Once You Have a Shell 🪜
+
 5.  Reverse Shell - How to GET IT 🐢
-6.  You have SHELL🐢😊 ... NOW WHAT ❓
-7.  Escalating Privliges 
-8.  I AM ROOT 🌳 What's Next? 🦝
-9.  Pivoting ↓↳
-10. Transporting Files 📦
+6.  You have SHELL🐢😊 ... NOW WHAT ❓ 
+7.  I AM ROOT 🌳 What's Next? 🦝
+8.  Pivoting 🔄 ↓↳
+
+9. Transporting Files 📦
+
+- - - - - - - - - - - - - - - - - - - - - -
 
 **!!! KEEP NOTES ON EVERYTHING YOU DO !!!**
+ = try cherrytree or doom emacs for oscp =
 
---------------------------------------------------------------
---------------------------------------------------------------
+- - - - - - - - - - - - - - - - - - - - - -
 
-
-# 1) Enumeration: Network Scanning 🌐
+### + + + + + + + + + + + + + + + + + + + + + + +
+## 1) Enumeration: Network Scanning 🌐
 * ALWAYS DO **ENUMERATION IN BACKGROUND** _while working on other things_
 * Stuck? **Do More Enumeration**
 * Assuming you're already connected to the VPN
@@ -41,8 +58,7 @@
 
 - - - - - - - - - - - - - - - - - - - - -
 
-2. Use `network scanning` / `Subdomain_Scanning` / `SMB Enumeration`
-    etc.
+2. Use `network scanning` / `Subdomain_Scanning` / etc
 
   + Look at:
     `oscp_playbook_notes/oscp_4_enmeration_network_scan.md`
@@ -59,7 +75,7 @@ Example: https://www.youtube.com/watch?v=M4J0tH5vk_k
 - - - - - - - - - - - - - - - - - - - - -
 
 4. **CONDITION: `Port 80 or 443 Open?`:** Try opening it in a **browser**
-  + Go to the **Web Stuff** section below
+  + Go to the **Web Stuff: Enumeration 🕸️** section below
 
 - - - - - - - - - - - - - - - - - - - - -
 
@@ -67,8 +83,9 @@ Example: https://www.youtube.com/watch?v=M4J0tH5vk_k
 --------------------------------------------------------------
 
 
-# 2) Web Stuff: Enumeration 🕸️
+## 2) Web Stuff: Enumeration 🕸️
 * Make sure to have _Burp_ proxying setup 
+* You can try Yuki: https://latesthackingnews.com/2018/10/12/yuki-chan-the-auto-web-penetration-testing-tool/
 
 1. When _first visting the site_
   + Have `proxy` _intercept off_ initially, but have it collecting traffic
@@ -141,7 +158,7 @@ Example: https://www.youtube.com/watch?v=M4J0tH5vk_k
 --------------------------------------------------------------
 --------------------------------------------------------------
 
-# 3) Web Stuff: Exploitation 🕸️
+## 3) Web Stuff: Exploitation 🕸️
 
 **Login Exploitation**
 
@@ -185,7 +202,7 @@ Example: https://www.youtube.com/watch?v=M4J0tH5vk_k
 --------------------------------------------------------------
 --------------------------------------------------------------
 
-# 4) PrivEsc 🛗: Once You Have a Shell 🪜
+## 4) PrivEsc 🛗: Once You Have a Shell 🪜
   
 1. Visit `oscp_playbook_notes/oscp_10_privilige_escalation.md`
    for _details_
@@ -197,7 +214,7 @@ Example: https://www.youtube.com/watch?v=M4J0tH5vk_k
 -----------------------------------------------------------------
 -----------------------------------------------------------------
 
-# 5) Reverse Shell - How to GET IT 🐢
+## 5) Reverse Shell - How to GET IT 🐢
  + You may need to **transport files**
   - See the `Transporting Files 📦` _section below_
    
@@ -224,39 +241,39 @@ Example: https://www.youtube.com/watch?v=M4J0tH5vk_k
 -----------------------------------------------------------------
 
 
-# 6) You have SHELL🐢😊 ... NOW WHAT ❓
+## 6) You have SHELL🐢😊 ... NOW WHAT ❓
 
 1. See what's **available to you**:
   + Observe _See What's Available to Young's_ section
     in `oscp_playbook_noates/oscp_3_useful_cmds.md`
-
+ 
 2. Get **information about he system**
   + Observe _Information About the System_ section
     in `oscp_playbook_noates/oscp_3_useful_cmds.md`
-
+ 
 2. Check **privliges**
   + `$ sudo ls` - do i have sudo permissions?
-
+ 
 3. See if you can **escalate privliges**
   + See the `PrivEsc 🛗: Once You Have a Shell 🪜` _section above_
    - You may need to _transport files_
     * See the `Transporting Files 📦` _section below_
-
+ 
 4. Do some **network scanning**
   + See the `Enumeration: Network Scanning 🌐`
     section above
-
+ 
 5. Try _pivoting_
-  + See the `Pivoting ↓↳` section below
+  + See the `Pivoting 🔄 ↓↳` section below
   
 6. See if you can **transport file in**
   + Is there a `file` that _can be helpful?_
   + See the `Transporting Files 📦` _section below_
-
+ 
 --------------------------------------------------------------
 --------------------------------------------------------------
  
-# 7) I AM ROOT 🌳 What's Next? 🦝
+## 7) I AM ROOT 🌳 What's Next? 🦝
 
 * Do some _network scanning_
  + See the `Enumeration: Network Scanning 🌐` section above
@@ -269,7 +286,7 @@ Example: https://www.youtube.com/watch?v=M4J0tH5vk_k
 --------------------------------------------------------------
 --------------------------------------------------------------
 
-# 8) Pivoting ↓↳ 
+## 8) Pivoting 🔄 ↓↳ 
 
 **POTENTIAL OPTIONS (MAY NOT BE UP TO DATE)**
    * Double check w/ `oscp_9_pivoting.md`
@@ -285,7 +302,7 @@ Example: https://www.youtube.com/watch?v=M4J0tH5vk_k
 --------------------------------------------------------------
 --------------------------------------------------------------
 
-# 9) Transporting Files 📦
+## 9) Transporting Files 📦
 
 **POTENTIAL OPTIONS (MAY NOT BE UP TO DATE)**
    * Double check w/ `oscp_11_transport_files.md`

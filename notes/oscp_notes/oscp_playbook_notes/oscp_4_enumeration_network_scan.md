@@ -4,10 +4,24 @@
 ### Table of Contents 
 1. Rustscan 
 2. NMAPAUTOMATOR 
+
 3. Nmap
-4. Masscan (use rustscan instead)
-5. Wireshark
-6. DNS Scanning
+4. Wireshark / tcpdump
+5. DNS Enumeration 
+6. SMB Enumeration 
+7. Subdomain Enumeration
+
+8. Network Sniff for Password/Hashes 
+9. Active Directory Enumeration 
+
+- - - - - - - - - - - - - - - - - - - - - -
+
+* To look at: 
+redhawk (enumeration): https://latesthackingnews.com/2018/11/21/red-hawk-open-source-information-gathering-and-vulnerability-scanning-tool/
+
+* Deprecated:
+ + Sparta (use nmapAutomator instead)
+ + Masscan (use rustscan instead)
 
 ----------------------------------------------------------------------
 ----------------------------------------------------------------------
@@ -58,13 +72,23 @@ Reference: https://github.com/RustScan/RustScan/wiki/Things-you-may-want-to-do-w
 ----------------------------------------------------------------------
 ----------------------------------------------------------------------
 
+### + + + + + + + + + + + + + + + + + + + + + +
 ## 2) NMAPAUTOMATOR ----------------------------
 
-**Usage**
-   - `./nmapAutomator <IP> all`
+### Usage 
+Usage Guide: https://linuxhint.com/nmapautomator/
+```Usage_Examples:
+   sudo ./nmapAutomator <IP> all
+   sudo ./nmapAutomator.sh 64.91.238.144 Full
+   sudo ./nmapAutomator.sh 64.91.238.144 Recon
+   sudo ./nmapAutomator.sh 64.91.238.144 Quick
+   sudo ./nmapAutomator.sh 64.91.238.144 Basic
+   sudo ./nmapAutomator.sh 64.91.238.144 UDP
+   sudo ./nmapAutomator.sh <Target> Vulns
+```
 
 ### Installation & Setup 
-Guide: https://linuxhint.com/nmapautomator/
+Installation Guide: https://linuxhint.com/nmapautomator/
 
 ```Install_Dependencies_Involving_GO:
     # Download go tar from https://go.dev/doc/install
@@ -76,7 +100,7 @@ Guide: https://linuxhint.com/nmapautomator/
     go install github.com/OJ/gobuster@latest
 ```
 ```Install_DebianLinux_Dependencies
-    sudo apt install nmap libwhisker2-perl nikto
+    sudo apt install -y smtp-user-enum nmap libwhisker2-perl nikto
     reboot 
     cd /tmp
     git clone https://github.com/vulnersCom/nmap-vulners.git
@@ -94,7 +118,8 @@ Guide: https://linuxhint.com/nmapautomator/
 
 ----------------------------------------------------------------------
 ----------------------------------------------------------------------
-
+ 
+### + + + + + + + + + + + + + + + + + + + + + +
 ## 3) NMAP -------------------------------------
 
 ### Nmap Table of Contents
@@ -103,7 +128,7 @@ Guide: https://linuxhint.com/nmapautomator/
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-**1 - Basic NMAP Scans**
+### 1 - Basic NMAP Scans
 
 ```Basic_Nmap_Scan_From_ITSecurityLabs
 nmap -sV -sC -T4 -p- -oA nmap
@@ -119,7 +144,7 @@ nmap -sV -sC -vvv -oA nmap/initial $IP
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-**2 - Subdomain NMAP Scans**
+### 2 - Subdomain NMAP Scans
 
 ```Subdomain_Scanning
 # Stealthy
@@ -152,34 +177,24 @@ nmap 10.11.1.X --top-ports 100
 ----------------------------------------------------------------------
 ----------------------------------------------------------------------
 
-## 4) MASSSCAN ---------------------------------
-
-**USE RUSTSCAN INSTAEAD** 
-
-```Basic_Masscan
-masscan -p22,80,445 192.168.1.0/24
-```
-
-----------------------------------------------------------------------
-----------------------------------------------------------------------
-
-## 5) WIRESHARK --------------------------------
+### + + + + + + + + + + + + + + + + + + + + + +
+## 4) WIRESHARK / TCPDUMP ----------------------
 + If **Wireshark is available**, open it and see what `IP`s are
   communicating with your machine
  - Or try **install it**
 
 ----------------------------------------------------------------------
 ----------------------------------------------------------------------
-
-## 6) DNS SCANNING -----------------------------
+### + + + + + + + + + + + + + + + + + + + + + +
+## 5) DNS ENUMERATION --------------------------
 
 **nslookup**
 **dig**
 
 ----------------------------------------------------------------------
 ----------------------------------------------------------------------
-
-## 7) SMB Enumerations -------------------------
+### + + + + + + + + + + + + + + + + + + + + + +
+## 6) SMB ENUMERATION --------------------------
 
   **WINDOWS**
 
@@ -187,4 +202,31 @@ masscan -p22,80,445 192.168.1.0/24
 
 ----------------------------------------------------------------------
 ----------------------------------------------------------------------
+### + + + + + + + + + + + + + + + + + + + + + +
+## 7) SUBDOMAIN ENUMERATION --------------------
+
+subfinder: https://latesthackingnews.com/2021/01/23/subfinder-a-subdomain-discovery-tool/
+
+turbolist3r: https://latesthackingnews.com/2019/12/04/turbolist3r-an-automated-subdomain-scanning-tool/
+
+knock: https://latesthackingnews.com/2018/11/30/knock-open-source-subdomain-scanner-tool/
+
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+### + + + + + + + + + + + + + + + + + + + + + +
+## 8) Network Sniff for Password/Hashes -------
+
+net-creds: https://latesthackingnews.com/2018/08/24/net-creds-open-source-tool-to-sniff-network-passwords-and-hashes/
+
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+### + + + + + + + + + + + + + + + + + + + + + +
+## 9) ACTIVE DIRECTORY ENUMERATION ------------
+
+**Bloodhound**
+bloodhound: https://latesthackingnews.com/2018/09/25/bloodhound-a-tool-for-exploring-active-directory-domain-security/
+
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+### + + + + + + + + + + + + + + + + + + + + + +
 
