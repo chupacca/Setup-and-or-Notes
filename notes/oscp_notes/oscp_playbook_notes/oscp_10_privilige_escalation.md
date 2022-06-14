@@ -3,13 +3,14 @@
 ---------------------------------------------------------------
 ---------------------------------------------------------------
 
-# BOTH 
+# 1) BOTH 
 
 ### Both: Table of Contents 
    1. Do You Have Source Code? 
    
    
-## 1) Do You Have Source Code?
+
+## 1 - Do You Have Source Code?
 
 **Check for Hardcoded Secrets / Credentials**
 dumpsterdiver: https://latesthackingnews.com/2018/07/10/dumpsterdiver-the-tool-for-finding-hardcoded-secrets/
@@ -17,16 +18,14 @@ dumpsterdiver: https://latesthackingnews.com/2018/07/10/dumpsterdiver-the-tool-f
 ---------------------------------------------------------------
 ---------------------------------------------------------------
 
-# LINUX 
+## + + + + + + + + + + + + + + + + + + + + + + + + + + +
+# 2) LINUX 
 
 ### Linux: Table of Contents 
    1. DO YOU HAVE SUDO PRIVLIGES?
    2. Get information about the system
    3. Try using Linux Exploit Suggester 
-   
-- - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-## 1) DO YOU HAVE SUDO PRIVLIGES?
+## 1 - DO YOU HAVE SUDO PRIVLIGES?
 
 1. If you have _sudo privliges,_ try making this bash file 
   ```escalate.sh
@@ -36,14 +35,15 @@ dumpsterdiver: https://latesthackingnews.com/2018/07/10/dumpsterdiver-the-tool-f
  - Your'e essentially calling `sudo bash` to get _root shell_
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-## 2) Get information about he system
+### = = = = = = = = = = = = = = = = = = = =
+## 2 - Get information about he system
   + Observe _Information About the System_ section
     in `oscp_playbook_noates/oscp_3_useful_cmds.md`
     
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-## 3) Try using a Linux Exploit Suggester
+### = = = = = = = = = = = = = = = = = = = =
+## 3 - Try using a Linux Exploit Suggester
 Linux Exploit Suggester: https://github.com/mzet-/linux-exploit-suggester
 PrivilegeEsc-Linux: https://latesthackingnews.com/2018/12/12/privilegeesc-linux-open-source-script-for-enumeration-on-linux/
 
@@ -82,9 +82,9 @@ PrivilegeEsc-Linux: https://latesthackingnews.com/2018/12/12/privilegeesc-linux-
 
 
 
-# ===== BREAKLINE ===== #
-
-# WINDOWS
+### = = = = = = = = = = = = = = = = = = = =
+## + + + + + + + + + + + + + + + + + + + + + + + + + + +
+# 3) WINDOWS
 
 ### Windows: Table of Contents 
    1. 
@@ -95,3 +95,6 @@ PrivilegeEsc-Linux: https://latesthackingnews.com/2018/12/12/privilegeesc-linux-
 
 ---------------------------------------------------------------
 ---------------------------------------------------------------
+ 
+## + + + + + + + + + + + + + + + + + + + + + + + + + + +
+-

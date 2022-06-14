@@ -1,3 +1,5 @@
+# USEFUL TOOLS 
+
 ### TABLE OF CONTENTS 
 #### 1. APPLICATION 
 #### 2. BROWSER PLUGINS 
@@ -16,10 +18,7 @@
   + Web App Testing Tools
   + Remote Server that I Control
 
-------------------------------------------------------------------------
-------------------------------------------------------------------------
-
-# APPLICATION 
+## 1) APPLICATION 
 
 App Any Run: https://app.any.run/
 
@@ -33,11 +32,9 @@ Nessus
 OpenVAS 
 joomscan: https://github.com/OWASP/joomscan
 
-
 ------------------------------------------------------------------------
-------------------------------------------------------------------------
-
-# BROWSER PLUGINS 
+### + + + + + + + + + + + + + + + + + + + + + + + + + + +
+## 2) BROWSER PLUGINS 
 
   **Cookies**
 + Cookie Editor (Firefox & Chrome)
@@ -55,9 +52,8 @@ joomscan: https://github.com/OWASP/joomscan
  - analyzes `web app` to find _what it's using_
  
 ------------------------------------------------------------------------
-------------------------------------------------------------------------
-
-# BURP TOOLS 
+### + + + + + + + + + + + + + + + + + + + + + + + + + + +
+## 3) BURP TOOLS 
 
 - - - - - - - - - - - - - - - - - - - - -
 
@@ -106,31 +102,40 @@ joomscan: https://github.com/OWASP/joomscan
 - - - - - - - - - - - - - - - - - - - - -
 
 ------------------------------------------------------------------------
-------------------------------------------------------------------------
+### + + + + + + + + + + + + + + + + + + + + + + + + + + +
+## 4) CLI TOOLS - COMMAND LINE TOOLS
 
-# CLI TOOLS - COMMAND LINE TOOLS
-
+### CLI Tools - Table of Contents 
+   1. Docker (Pull)
+   2. Dependency Review 
+   3. Web App Code Review 
+   4. Web App (Language Specific) Code Review 
+   5. Web App Testing Tools 
+   6. Remote Server that I Control
 - - - - - - - - - - - - - - - - - - - - -
 
-## Docker (Pull)
+### 1 - Docker (Pull)
    mpepping/cyberchef: https://hub.docker.com/r/mpepping/cyberchef
    - Use `cyberchef functionality` _offline_
 
 - - - - - - - - - - - - - - - - - - - - -
 
-## Dependency Review
+#### + + + + + + + + + + + + + + + + + + + + + + +
+### 2 - Dependency Review
    AppThreat/dep-scan: https://github.com/AppThreat/dep-scan
 
 - - - - - - - - - - - - - - - - - - - - -
 
-## Web App Code Review
+#### + + + + + + + + + + + + + + + + + + + + + + +
+### 3 - Web App Code Review
    graudit: https://github.com/wireghoul/graudit
    semgrep: https://github.com/returntocorp/semgrep
    silversearcher-ag: https://github.com/ggreer/the_silver_searcher
 
 - - - - - - - - - - - - - - - - - - - - -
 
-## Web App (Language Specific) Code Review
+#### + + + + + + + + + + + + + + + + + + + + + + +
+### 4 - Web App (Language Specific) Code Review
 
  **GO**
    gosec: https://github.com/securego/gosec
@@ -152,7 +157,8 @@ joomscan: https://github.com/OWASP/joomscan
 
 - - - - - - - - - - - - - - - - - - - - -
 
-## Web App Testing Tools 
+#### + + + + + + + + + + + + + + + + + + + + + + +
+### 5 - Web App Testing Tools 
   * Also look at OSCP notes for tools (like nmapAutomator)
 
   **Crawling / Mapping Application**
@@ -176,7 +182,8 @@ Joomscan: https://latesthackingnews.com/2018/12/13/joomscan-open-source-joomla-v
 
 - - - - - - - - - - - - - - - - - - - - -
 
-## Remote Server that I Control 
+#### + + + + + + + + + + + + + + + + + + + + + + +
+### 6 - Remote Server that I Control 
 
 + Surge: https://hakluke.com/how-to-use-surge-the-perfect-host-for-xss-payloads/
  - For remote web servers to do things like SSRF,
@@ -189,10 +196,7 @@ Joomscan: https://latesthackingnews.com/2018/12/13/joomscan-open-source-joomla-v
        #  given doesn't work just run `surge` again and press 
        #  enter quickly so the generated URL works.
    ```
+#### + + + + + + + + + + + + + + + + + + + + +
+ = 
 
-- - - - - - - - - - - - - - - - - - - - -
-
----------------------------------------------------------
----------------------------------------------------------
-
- 
+### + + + + + + + + + + + + + + + + + + + + + + + + + + +

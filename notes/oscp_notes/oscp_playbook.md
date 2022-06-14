@@ -11,16 +11,17 @@
 - - - - - - - - - - - - - - - - - - - - - -
 
 ### Tools OSCP said I Can Use
-BloodHound
-SharpHound
-PowerShell Empire
-Covenant 
-Powerview
-Rubeus
-evil-winrm
-Responder (Poisoning and Spoofing is not allowed in the labs or on the exam)
-Crackmapexec
-Mimikatz
+   + BloodHound
+   + SharpHound
+   + PowerShell Empire
+   + Covenant 
+   + Powerview
+   + Rubeus
+   + evil-winrm
+   + Responder
+    - (Poisoning and Spoofing is not allowed in the labs or on the exam)
+   + Crackmapexec
+   + Mimikatz
  
 ### Table of Contents
 1.  Enumeration: Network Scanning 🌐
