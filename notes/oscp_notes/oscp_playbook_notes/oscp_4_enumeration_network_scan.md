@@ -2,8 +2,10 @@
 * Try to hold scan results in a _separate directory_
 
 ### Table of Contents 
-1. Rustscan 
-2. NMAPAUTOMATOR 
+1. Network Enumeration 
+  + Rustscan 
+  + NMAPAUTOMATOR 
+  + autorecon 
 
 3. Nmap
 4. Wireshark / tcpdump
@@ -26,15 +28,11 @@ redhawk (enumeration): https://latesthackingnews.com/2018/11/21/red-hawk-open-so
 ----------------------------------------------------------------------
 ----------------------------------------------------------------------
 
-## 1) RUSTSCAN ---------------------------------
+### + + + + + + + + + + + + + + + + + + + + + +
+## (1) Network Enumeration 
 
-**Usage**
-Reference: https://github.com/RustScan/RustScan/wiki/Things-you-may-want-to-do-with-RustScan-but-don't-understand-how
-
-   + One IP Address: `rustscan -a <IP>`
-   + Multiple IP Addresses: `rustscan -a <IP>/24`
-
-### Installation & Setup 
+###   1 - RUSTSCAN
+#### Installation & Setup 
   + Docker
     ```Debian_Installation
     sudo apt install -y docker.io
@@ -53,7 +51,7 @@ Reference: https://github.com/RustScan/RustScan/wiki/Things-you-may-want-to-do-w
      alias rustscan='docker run -it --rm --name rustscan \ 
                     rustscan/rustscan:2.0.0'
      ```
-
+   
   + Source: From Source Code 
     ```DebianLinux_Installations 
     curl https://sh.rustup.rs -sSf | sh
@@ -65,31 +63,20 @@ Reference: https://github.com/RustScan/RustScan/wiki/Things-you-may-want-to-do-w
     ./resease/rustscan 
     ```
    - Execution: `cd RustScan/release/rustscan`
-
+   
   + MacOS Installation: `brew install rustscan`
-
-
-----------------------------------------------------------------------
-----------------------------------------------------------------------
-
-### + + + + + + + + + + + + + + + + + + + + + +
-## 2) NMAPAUTOMATOR ----------------------------
-
-### Usage 
-Usage Guide: https://linuxhint.com/nmapautomator/
-```Usage_Examples:
-   sudo ./nmapAutomator <IP> all
-   sudo ./nmapAutomator.sh 64.91.238.144 Full
-   sudo ./nmapAutomator.sh 64.91.238.144 Recon
-   sudo ./nmapAutomator.sh 64.91.238.144 Quick
-   sudo ./nmapAutomator.sh 64.91.238.144 Basic
-   sudo ./nmapAutomator.sh 64.91.238.144 UDP
-   sudo ./nmapAutomator.sh <Target> Vulns
-```
-
-### Installation & Setup 
+   
+   
+#### USAGE
+Reference: https://github.com/RustScan/RustScan/wiki/Things-you-may-want-to-do-with-RustScan-but-don't-understand-how
+   
+   + One IP Address: `rustscan -a <IP>`
+   + Multiple IP Addresses: `rustscan -a <IP>/24`
+#### - - - - - - - - - - - - - - - - -
+###   2 - NMAPAUTOMATOR
+#### Installation & Setup 
 Installation Guide: https://linuxhint.com/nmapautomator/
-
+   
 ```Install_Dependencies_Involving_GO:
     # Download go tar from https://go.dev/doc/install
     cd ~/Downloads 
@@ -115,20 +102,33 @@ Installation Guide: https://linuxhint.com/nmapautomator/
     chmod +x nmapAutomator.sh
     ln -s nmapAutomator.sh /usr/local/bin
 ```
-
+   
 ----------------------------------------------------------------------
-----------------------------------------------------------------------
- 
-### + + + + + + + + + + + + + + + + + + + + + +
-## 3) NMAP -------------------------------------
+#### Usage 
+Usage Guide: https://linuxhint.com/nmapautomator/
+```Usage_Examples:
+   sudo ./nmapAutomator <IP> all
+   sudo ./nmapAutomator.sh 64.91.238.144 Full
+   sudo ./nmapAutomator.sh 64.91.238.144 Recon
+   sudo ./nmapAutomator.sh 64.91.238.144 Quick
+   sudo ./nmapAutomator.sh 64.91.238.144 Basic
+   sudo ./nmapAutomator.sh 64.91.238.144 UDP
+   sudo ./nmapAutomator.sh <Target> Vulns
+```
+   
+#### - - - - - - - - - - - - - - - - -
+###   3 - AUTORECON 
+autorecon: https://latesthackingnews.com/2019/08/04/autorecon-an-open-source-enumeration-tool/
+#### - - - - - - - - - - - - - - - - -
+###   4 - NMAP
 
-### Nmap Table of Contents
+#### Nmap Table of Contents
    1. Basic NMAP Scans 
    2. Subdomain NMAP Scans 
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-### 1 - Basic NMAP Scans
+#### 1: Basic NMAP Scans
 
 ```Basic_Nmap_Scan_From_ITSecurityLabs
 nmap -sV -sC -T4 -p- -oA nmap
@@ -144,7 +144,7 @@ nmap -sV -sC -vvv -oA nmap/initial $IP
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-### 2 - Subdomain NMAP Scans
+#### 2: Subdomain NMAP Scans
 
 ```Subdomain_Scanning
 # Stealthy
@@ -177,24 +177,25 @@ nmap 10.11.1.X --top-ports 100
 ----------------------------------------------------------------------
 ----------------------------------------------------------------------
 
+#### - - - - - - - - - - - - - - - - -
 ### + + + + + + + + + + + + + + + + + + + + + +
-## 4) WIRESHARK / TCPDUMP ----------------------
+## (2) WIRESHARK / TCPDUMP 
 + If **Wireshark is available**, open it and see what `IP`s are
   communicating with your machine
  - Or try **install it**
 
 ----------------------------------------------------------------------
-----------------------------------------------------------------------
 ### + + + + + + + + + + + + + + + + + + + + + +
-## 5) DNS ENUMERATION --------------------------
+## (3) DNS ENUMERATION 
 
 **nslookup**
 **dig**
+**dnsenum**
 
 ----------------------------------------------------------------------
 ----------------------------------------------------------------------
 ### + + + + + + + + + + + + + + + + + + + + + +
-## 6) SMB ENUMERATION --------------------------
+## (4) SMB ENUMERATION 
 
   **WINDOWS**
 
@@ -203,7 +204,7 @@ nmap 10.11.1.X --top-ports 100
 ----------------------------------------------------------------------
 ----------------------------------------------------------------------
 ### + + + + + + + + + + + + + + + + + + + + + +
-## 7) SUBDOMAIN ENUMERATION --------------------
+## (5) SUBDOMAIN ENUMERATION 
 
 subfinder: https://latesthackingnews.com/2021/01/23/subfinder-a-subdomain-discovery-tool/
 
@@ -211,22 +212,22 @@ turbolist3r: https://latesthackingnews.com/2019/12/04/turbolist3r-an-automated-s
 
 knock: https://latesthackingnews.com/2018/11/30/knock-open-source-subdomain-scanner-tool/
 
-----------------------------------------------------------------------
++ Look at `NMAP` section above (_2: Subdomain NMAP Scans_)
+
 ----------------------------------------------------------------------
 ### + + + + + + + + + + + + + + + + + + + + + +
-## 8) Network Sniff for Password/Hashes -------
+## (6) Network Sniff for Password/Hashes 
 
 net-creds: https://latesthackingnews.com/2018/08/24/net-creds-open-source-tool-to-sniff-network-passwords-and-hashes/
 
 ----------------------------------------------------------------------
 ----------------------------------------------------------------------
 ### + + + + + + + + + + + + + + + + + + + + + +
-## 9) ACTIVE DIRECTORY ENUMERATION ------------
+## (7) ACTIVE DIRECTORY ENUMERATION 
 
 **Bloodhound**
 bloodhound: https://latesthackingnews.com/2018/09/25/bloodhound-a-tool-for-exploring-active-directory-domain-security/
 
 ----------------------------------------------------------------------
-----------------------------------------------------------------------
 ### + + + + + + + + + + + + + + + + + + + + + +
-
+ =

@@ -6,7 +6,7 @@
 
 2. Observe Headers 
   
-## 1) INJECTION ATTACKS 
+## (1) INJECTION ATTACKS 
 
 - - - - - - - - - - - - - - - - - - - - - - - - -
   
@@ -23,7 +23,7 @@
    - Look at the XSS section below: _1a : XSS_
 
 - - - - - - - - - - - - - - - - - - - - - - - - -
-### 1a : XSS
+###   1a : XSS
 #### + + + + + + + + + + + + + + + + + + + + + + + + 
 ### = = = = = = = = = = = = = = = = = = = = = = = = = = =
  =
