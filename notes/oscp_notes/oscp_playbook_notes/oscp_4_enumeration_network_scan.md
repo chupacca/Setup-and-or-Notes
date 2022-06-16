@@ -81,7 +81,10 @@ Installation Guide: https://linuxhint.com/nmapautomator/
     # Download go tar from https://go.dev/doc/install
     cd ~/Downloads 
     sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.#.#.linux-amd64.tar.gz
-    export PATH=$PATH:/usr/local/go/bin
+    export PATH=$PATH:/usr/local/go/bin/go
+    echo "alias go='/usr/local/go/bin/go'" >> ~/.bash_aliases
+    echo "alias gofmt='/usr/local/go/bin/gofmt'" >> ~/.bash_aliases
+    source ~/.bash_aliases
     
     # Since `go get` is depreceated, USE THIS: 
     go install github.com/OJ/gobuster@latest

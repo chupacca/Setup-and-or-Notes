@@ -1,40 +1,36 @@
 # WEB PLAYBOOK 
 ### Table of Contents 
-1. Injection Attacks 
-  + XSS
-  + SQLi / NoSQLi
-  + OS Command Injection 
-  + XXE - Cross Site Entity Injection 
-  + Directory Traversal 
-2. Server Side 
-  + SSTI - Servier Side Template Injection
-  + SSRF - Server Side Request Forger 
-3. Credentials Attacks
-  + CSRF 
-  + JWT Attacks 
-  + OAuth 
-  + PAM 
-  + SSO - Single Sign On
-4. Authentication / Authorization 
-  + Double Check Auth with Burp's `Autorize`
-  + 2FA - 2 Factor Authentication 
-  + Password Reset 
-5. CORS - Cross Origin Resource Sharing 
-  + 
-6. HTTP Headers 
-  + HTTP Request Smuggling 
-  + HTTP Host Header Attacks 
-7. Access Control
-  + 
-8. Web Sockets 
-  + 
-9. Web Cache
-  + 
+1.  Injection Attacks 
+   + XSS
+   + SQLi / NoSQLi
+   + OS Command Injection 
+   + XXE - Cross Site Entity Injection 
+   + Directory Traversal 
+2.  Server Side 
+   + SSTI - Servier Side Template Injection
+   + SSRF - Server Side Request Forger 
+3.  Credentials Attacks
+   + CSRF 
+   + JWT Attacks 
+   + OAuth 
+   + PAM 
+   + SSO - Single Sign On
+4.  Authentication / Authorization 
+   + Double Check Auth with Burp's `Autorize`
+   + 2FA - 2 Factor Authentication 
+   + Password Reset 
+5.  CORS - Cross Origin Resource Sharing 
+6.  HTTP Headers 
+   + HTTP Request Smuggling 
+   + HTTP Host Header Attacks
+   + MIME Types / Media Types 
+7.  Access Control
+8.  Web Sockets 
+9.  Web Cache
 10. Insecure Deserialization
-  + 
-11. Information Disclosure 
-  + Username Enumeration 
-  + 
+11. Disclosure Attacks
+   + Information Disclosure 
+   + Username Enumeration 
 12. Business Logic 
 13. File Attacks
    + File Upload Vulnerabilities 
@@ -52,27 +48,45 @@
    - Look at the XSS section below: _1a : XSS_
 - - - - - - - - - - - - - - - - - - - - - - - - -
 ###    1 - XSS
+ **TOOLS**
+ + Observe `useful_tools.md` _(3) BURP TOOLS -> XSS_
+ + Observe `useful_tools.md` _(4) CLI - TOOLS -> 5 - Web App Testing Tools_
+ 
+ **NOTES**
+ + Observe _files inside_`xss/` directory
 #### + + + + + + + + + + + + + + + + + + + + + + + + 
-###    2 - SQLi / NoSQLi
-#### + + + + + + + + + + + + + + + + + + + + + + + + 
+###    2 - SQLi / NoSQLi / GraphQL
+#### + + + + + + + + + + + + + + + + + + + + + + + +
+ + Observe `useful_tools.md` _(3) BURP TOOLS -> SQLi_
+ + Observe `useful_tools.md` _(3) BURP TOOLS -> GRAPH QL_
+ + Observe `useful_tools.md` _(4) CLI - TOOLS -> 5 - Web App Testing Tools_
 ###    3 - OS Command Injection 
 #### + + + + + + + + + + + + + + + + + + + + + + + + 
+ **NOTES**
+ + Observe _files inside_`cmd_inject/` directory
 ###    4 - XXE
 #### + + + + + + + + + + + + + + + + + + + + + + + + 
 ###    5 - Directory Traversal
-#### + + + + + + + + + + + + + + + + + + + + + + + + 
-###    6 - 
 #### + + + + + + + + + + + + + + + + + + + + + + + + 
 ### = = = = = = = = = = = = = = = = = = = = = = = = = = =
 ## (2)  SERVER SIDE 
 ###   1 - SSRF - Server Side Request Forgery 
 #### + + + + + + + + + + + + + + + + + + + + + + + + 
+ **TOOLS**
+ + Observe `useful_tools.md` _(4) CLI - TOOLS -> 6 - Remote Server that I Control_
+ **NOTES**
+ + Observe _files inside_`ssrf/` directory
 ###   2 - SSTI - Server Side Template Injection 
 #### + + + + + + + + + + + + + + + + + + + + + + + + 
 ### = = = = = = = = = = = = = = = = = = = = = = = = = 
 ## (3)  CREDENTIALS ATTACK 
 ###   1 - CSRF
 #### + + + + + + + + + + + + + + + + + + + + + + + + 
+ **TOOLS**
+ + Use Burp's `CSRF PoC`
+ 
+ **NOTES**
+ + Observe _files inside_`csrf/` directory
 ###   2 - JWT Attacks 
 #### + + + + + + + + + + + + + + + + + + + + + + + + 
 ###   3 - OAuth 
@@ -81,52 +95,39 @@
 #### + + + + + + + + + + + + + + + + + + + + + + + + 
 ###   5 - SSO - Single Sign On
 #### + + + + + + + + + + + + + + + + + + + + + + + + 
-###   6 - @U
-#### + + + + + + + + + + + + + + + + + + + + + + + + 
-###   7 - 
-#### + + + + + + + + + + + + + + + + + + + + + + + + 
-###   8 - 
-#### + + + + + + + + + + + + + + + + + + + + + + + + 
 ### = = = = = = = = = = = = = = = = = = = = = = = = = = =
 ## (4)  AUTHENTICATION / AUTHORIZATION 
 ###   1 - Use Burp Plugin `Autorize` 
+ **TOOLS**
+ + Observe `useful_tools.md` _(3) BURP TOOLS -> AUTHORIZATION / AUTHENTICATION_
 ###   2 - 2FA - 2 Factor Autentication 
 ###   3 - Password Reset 
-###   4 - 
-#### + + + + + + + + + + + + + + + + + + + + + + + + 
 ### = = = = = = = = = = = = = = = = = = = = = = = = = = =
 ## (5)  CORS - Cross Origin Resource Sharing 
-###   1 - 
-#### + + + + + + + + + + + + + + + + + + + + + + + + 
+ **NOTES**
+ + Observe _files inside_`cmd_inject/` directory
 ### = = = = = = = = = = = = = = = = = = = = = = = = = = =
 ## (6)  HTTP HEADERS 
 ###   1 - Http Request Smuggling 
 ###   2 - Http Host Header Attacks
 #### + + + + + + + + + + + + + + + + + + + + + + + + 
+###   3 - MIME TYPES / MEDIA TYPES
 ### = = = = = = = = = = = = = = = = = = = = = = = = = = =
 ## (7)  ACCESS CONTROL 
-###   1 - 
-#### + + + + + + + + + + + + + + + + + + + + + + + + 
 ### = = = = = = = = = = = = = = = = = = = = = = = = = = =
 ## (8)  WEB SOCKETS 
-###   1 - 
-#### + + + + + + + + + + + + + + + + + + + + + + + + 
 ### = = = = = = = = = = = = = = = = = = = = = = = = = = =
 ## (9)  WEB CACHE 
 ###   1 - Web Cache Poisoning 
 #### + + + + + + + + + + + + + + + + + + + + + + + + 
 ### = = = = = = = = = = = = = = = = = = = = = = = = = = =
 ## (10) INSECURE DESERIALIZATION 
-###   1 - 
-#### + + + + + + + + + + + + + + + + + + + + + + + + 
 ### = = = = = = = = = = = = = = = = = = = = = = = = = = =
-## (11) INFORMATION DISCLOSURE 
-###    1 - Username Enumeration 
-###    2 - 
+## (11) DISCLOSURE ATTACKS 
+###    1 - INFORMATION DISCLOSURE 
+###    2 - Username Enumeration 
 ### = = = = = = = = = = = = = = = = = = = = = = = = = = =
 ## (12) BUSINESS LOGIC 
-###   1 - 
-#### + + + + + + + + + + + + + + + + + + + + + + + + 
 ### = = = = = = = = = = = = = = = = = = = = = = = = = = =
 ## (13) FILE ATTACKS 
 ###    1 - File Upload Vulnerabilities 

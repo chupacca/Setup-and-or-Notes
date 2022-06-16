@@ -53,9 +53,20 @@ joomscan: https://github.com/OWASP/joomscan
 + Wappalyzer (Firefox & Chrome)
  - analyzes `web app` to find _what it's using_
  
-------------------------------------------------------------------------
+---------------------------------------------------------------
 ### + + + + + + + + + + + + + + + + + + + + + + + + + + +
 ## (3) BURP TOOLS 
+
+- - - - - - - - - - - - - - - - - - - - -
+
+ **NICE TO HAVE / QUALITY OF LIFE**
++ HackVector
+ - has a bunch of _useful functionality_
+ - one use is `encoding and encoding`
+ 
++ Param Miner 
+ - This extension identifies **hidden, unlinked parameters**
+ - Particularly useful for finding _`web cache` poisoning vulnerabilities_
 
 - - - - - - - - - - - - - - - - - - - - -
 
@@ -71,17 +82,6 @@ joomscan: https://github.com/OWASP/joomscan
   **GRAPH QL**
 + InQL Scanner
 + InQl Timer
-
-- - - - - - - - - - - - - - - - - - - - -
-
- **NICE TO HAVE / QUALITY OF LIFE**
-+ HackVector
- - has a bunch of _useful functionality_
- - one use is `encoding and encoding`
- 
-+ Param Miner 
- - This extension identifies **hidden, unlinked parameters**
- - Particularly useful for finding _`web cache` poisoning vulnerabilities_
 
 - - - - - - - - - - - - - - - - - - - - -
 
@@ -188,7 +188,9 @@ Joomscan: https://latesthackingnews.com/2018/12/13/joomscan-open-source-joomla-v
 #### + + + + + + + + + + + + + + + + + + + + + + +
 ###   6 - Remote Server that I Control 
 
-+ Surge: https://hakluke.com/how-to-use-surge-the-perfect-host-for-xss-payloads/
++ [OPTION 1] Burp's `Burp Collaborator Client`
+
++ [OPTION 2] Surge: https://hakluke.com/how-to-use-surge-the-perfect-host-for-xss-payloads/
  - For remote web servers to do things like SSRF,
    XSS, etc.
    ```Use
