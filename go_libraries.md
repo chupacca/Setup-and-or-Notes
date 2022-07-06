@@ -9,6 +9,9 @@ brew install go
 choco install go
 ```
 
+## VIM
+https://github.com/fatih/vim-go
+
 # Pwning (merge with python pwntools?)
 https://github.com/hupe1980/gopwn
 https://github.com/vulsio/go-exploitdb
@@ -26,6 +29,8 @@ https://github.com/Binject/debug
 https://github.com/Binject/binjection
 https://github.com/Binject/shellcode
 https://github.com/Binject/backdoorfactory
+Evolving the Go Memory Manager's RAM and CPU Efficiency: https://www.youtube.com/watch?v=S_1YfTfuWmo&list=PLsewlpCk05nZFFafBQjsCZ5cKfVbQQAkW&index=5
+
 
 ## Universal vs Donut
 `35:15`: https://www.youtube.com/watch?v=3RQb05ITSyk&list=PLsewlpCk05nZpjANaRjc97tvBqO4z8B6d&index=3
@@ -81,7 +86,8 @@ https://github.com/WireGuard/wgctrl-go
 # WASM - Webassembly
 https://github.com/wasmerio/wasmer-go
 https://github.com/bytecodealliance/wasmtime-go
-
+https://www.youtube.com/watch?v=jIH6TbsgtCQ
+https://www.youtube.com/watch?v=hu1xCxeC5tw&list=PLsewlpCk05nZFFafBQjsCZ5cKfVbQQAkW&index=3&t=912s
 
 # Call Go from OTHER LANGUAGES
 ## C/C++
@@ -92,8 +98,13 @@ import "C"
 ```
 
 ## Python
+30:30 - https://www.youtube.com/watch?v=AGLunpPtOgM
 ```Python
 ```
+
+## Javascript
+https://github.com/gopherjs/gopherjs
+Go In The Browser: https://www.youtube.com/watch?v=Jjqn5ZsS1iY&list=PLsewlpCk05nZFFafBQjsCZ5cKfVbQQAkW&index=6&t=888s
 
 # Cool Go Projects
 https://github.com/Binject/awesome-go-security
